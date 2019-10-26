@@ -18,8 +18,6 @@ export async function showArticleById(req: Request, res: Response) {
     // load a article by a given article id
     const article= await articleRepository.findOne(req.params.id);
 
-
-
     // if article was not found return 404 to the client
     if (!article) {
         res.status(404);
@@ -35,7 +33,7 @@ export async function showArticleById(req: Request, res: Response) {
     res.render('templates/default', {
         page: "static",
         pageUrl: pageUrl,
-        id: req.params.dynamicroute,
+        id: req.params.id,
         params: req.query,
         data: article,
         filter: "",
