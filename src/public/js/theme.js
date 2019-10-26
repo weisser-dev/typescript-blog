@@ -10,7 +10,7 @@
     }
 }
 
-function changeTheme(currentTheme) {
+function changeTheme() {
     var currentTheme = "dark"; 
     if(! localStorage.getItem("customTheme")) {
         var systemTheme = "light";
