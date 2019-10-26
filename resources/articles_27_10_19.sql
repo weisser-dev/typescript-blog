@@ -1,5 +1,5 @@
 /*
--- Query: SELECT * FROM `whit-e.com`.postings
+-- Query: SELECT * FROM `whit-e.com`.article
 LIMIT 0, 1000
 
 -- Date: 2019-10-26 11:43
