@@ -1,26 +1,12 @@
 import {Request, Response} from "express";
-import {getManager} from "typeorm";
-import {Article} from "../../entity/Article";
 
-/**
- * Loads all articles from the database.
- */
-export async function showIndex(req: Request, res: Response) {
+export function showStaticContent(req: Request, res: Response) {
 
-    // get a article repository to perform operations with post
-    const articleRepository = getManager().getRepository(Article);
     const pageUrl = "http://www.whit-e.com" + req.originalUrl;
-    // load all articles
-    const articles = await articleRepository.find();
-
-    console.log(articles);
-    // return loaded articles
-    //res.send(articles);
-    res.render('templates/default', {page: '../content/index', 
-    pageUrl: pageUrl, 
-    id: 'index', 
-    data: articles, 
-    tags: "", 
-    filter: "",
-    easterEgg: ""});
+    const page = '../content/' + req.params.id;
+    res.render('templates/default', {page: page,
+            pageUrl: pageUrl,
+            id: req.params.id, 
+            params: req.query, 
+            tags: ""});
 }
