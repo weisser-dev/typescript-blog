@@ -32,8 +32,12 @@
         content: url(/images/signet_negative.svg);
     }
 
-    .svg-logo{
-        content: url(/images/logo_b_negative_wo.svg);
+    .whit-e-nav-logo .svg-logo .light{
+        display: none;
+    }
+
+    .whit-e-nav-logo .svg-logo .dark{
+        display: block;
     }
 
     .whit-e-head {

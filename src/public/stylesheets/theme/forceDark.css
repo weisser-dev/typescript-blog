@@ -31,8 +31,12 @@ body {
     content: url(/images/signet_negative.svg);
 }
 
-.svg-logo{
-    content: url(/images/logo_b_negative_wo.svg);
+.svg-logo .light{
+    display: none;
+}
+
+.svg-logo .dark{
+    display: block;
 }
 
 .whit-e-head {
