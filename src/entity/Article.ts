@@ -21,7 +21,7 @@ export class Article {
     @Column("text")
     description!: string;
 
-    @Column("text")
+    @Column("longtext")
     content!: string;
 
 }
