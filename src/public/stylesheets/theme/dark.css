@@ -32,11 +32,11 @@
         content: url(/images/signet_negative.svg);
     }
 
-    .whit-e-nav-logo .svg-logo .light{
+    .whit-e-nav-logo .svg-logo-light{
         display: none;
     }
 
-    .whit-e-nav-logo .svg-logo .dark{
+    .whit-e-nav-logo .svg-logo-dark{
         display: block;
     }
 

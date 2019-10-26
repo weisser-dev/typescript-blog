@@ -31,11 +31,11 @@ body {
     content: url(/images/signet_negative.svg);
 }
 
-.svg-logo .light{
+.svg-logo-light{
     display: none;
 }
 
-.svg-logo .dark{
+.svg-logo-dark{
     display: block;
 }
 

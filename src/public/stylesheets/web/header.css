@@ -53,18 +53,18 @@
     height:20px;
 }
 
-.whit-e-nav-logo .svg-logo{
+.whit-e-nav-logo .svg-logo-light{
     width:auto;
     height:30px;
     margin-left: 5px;
-}
-
-.whit-e-nav-logo .svg-logo .dark{
-    display: none;
-}
-
-.whit-e-nav-logo .svg-logo .light{
     display: block;
+}
+
+.whit-e-nav-logo .svg-logo-dark{
+    width:auto;
+    height:30px;
+    margin-left: 5px;
+    display: none;
 }
 
 .whit-e-nav-logo-suffix{
