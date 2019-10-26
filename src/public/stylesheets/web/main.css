@@ -1,0 +1,209 @@
+body{
+    background:#eaeaea
+}
+.time-section {
+    text-align: right; 
+    color: gray;
+    font-size: small;
+    padding-right: 25px; 
+}
+.img{
+    display:block;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:50%;
+    border-radius:100%
+}
+.hidden{
+    visibility:hidden;
+    position:absolute;
+    text-indent:-9999px
+}
+.site-wrapper{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    min-height:100vh;
+}
+.site-main{
+    -ms-flex-positive:1;
+    flex-grow:1;
+    margin-top: 15px;
+}
+
+#site-main-index{
+    z-index: 100;
+    margin-top: -90px;
+}
+
+.outer{
+    position:relative;
+    padding:0 4vw
+}
+.inner{
+    width:100%;
+    margin:0 auto
+}
+.site-header{
+    position:relative;
+    max-height: 350px;
+    background:#090a0b no-repeat 50%;
+    background-size:cover
+}
+.site-header:before{
+    bottom:0;
+    background:rgba(0,0,0,.8)
+}
+.site-header:after,.site-header:before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    z-index:10;
+    display:block
+}
+.site-header:after{
+    bottom:auto;
+    height:80px;
+    background:linear-gradient(rgba(0,0,0,.1),transparent)
+}
+.site-header.no-cover:after,.site-header.no-cover:before{
+    display:none
+}
+.site-header-content{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -ms-flex-align:center;
+    align-items:center;
+    min-height:200px;
+    max-height:350px;
+    padding:10vw 4vw;
+    text-align:center
+}
+.site-title{
+    z-index:10;
+    margin:0;
+    padding:0;
+    font-size:3.8rem;
+    font-weight:700
+}
+.site-logo{
+    margin-bottom: 80px;
+    height: 135px;
+}
+.site-description{
+    z-index:10;
+    margin:0;
+    padding:5px 0;
+    font-size:2.2rem;
+    font-weight:300;
+    letter-spacing:.5px;
+    opacity:.8
+}
+.news-feed{
+    position:relative;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    max-width:1150px;
+    margin:0 auto;
+    padding:40px 0 0
+}
+.posting,.news-feed{
+    display:-ms-flexbox;
+    display:flex
+}
+.posting{
+    flex: 1 1 250px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 250px;
+    overflow: hidden;
+    margin: 0 20px 35px;
+    background:#fff 50%;
+    background-size:cover;
+    border-radius:5px;
+    box-shadow: 8px 14px 38px rgba(177, 177, 177, 0.11), 1px 3px 8px rgba(185, 185, 185, 0.31);
+    transition:all .7s ease;
+}
+.posting:hover{
+    background-color: #f6f6f6;
+    box-shadow: 0 0 1px rgba(88, 89, 90, 0.58), 0 3px 16px rgba(78, 78, 78, 0.24);
+    transition: all .7s ease;
+    transform: translate3D(0,-1px,0);
+}
+.posting-image-link{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    border-radius:5px 5px 0 0
+}
+.posting-image{
+    width:auto;
+    height:200px;
+    background:#c5d2d9 no-repeat 50%;
+    background-size:cover
+}
+.posting-content-link{
+    position:relative;
+    display:block;
+    padding:25px 25px 0;
+    color:#15171a;
+}
+.posting-content-link:hover{
+    text-decoration:none
+}
+.posting-tags{
+    display:block;
+    margin-bottom:4px;
+    color:#738a94;
+    font-size:1.2rem;
+    line-height:1.15em;
+    font-weight:500;
+    letter-spacing:.5px;
+    text-transform:uppercase
+}
+.posting-title{
+    margin-top:0
+}
+.posting-content{
+    -ms-flex-positive:1;
+    flex-grow:1;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -ms-flex-pack:justify;
+    justify-content:space-between
+}
+.posting-excerpt{
+    font-family:Georgia,serif
+}
+
+/* 404 */
+.full-width.white {
+    background: #fff;
+    text-align: center;
+    max-width: 100%;
+}
+
+.static {
+    margin-bottom: 35px;
+    padding: 15px 30px;
+    background: #fdfdfd;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(177, 177, 177, 0.11), 1px 3px 8px rgba(185, 185, 185, 0.31);
+    max-width: 950px;
+}	
+
+/* EasterEgg Section */
+.upsidedown {
+    transform: rotate(180deg);
+}

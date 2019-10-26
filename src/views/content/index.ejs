@@ -1,0 +1,41 @@
+    <meta property="og:image" content="https://whit-e.com/images/metaimg.JPG">
+    <meta property="og:title" content="WHIT-E.COM Dev Blog">
+    <meta property="og:site_name" content="https://whit-e.com">
+    <meta property="og:description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
+    <meta property="og:url" content="https://whit-e.com">
+    <meta name="description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
+
+    <header class="site-header outer " style="background-image: url(/images/bg.jpg);">
+        <title>WHIT-E.COM - DEV Blog by Erik Weisser</title>        
+        <div class="inner">
+            <div class="site-header-content">
+                <h1 class="site-title">
+                    <img class="site-logo" src="/images/logo_b_negative.svg" alt="WHIT-E.COM">
+                </h1>
+            </div>
+        </div>
+    </header>
+    <main id="site-main-index" class="site-main outer " role="main">
+        <div class="inner">
+            <div class="news-feed">
+                <% data.forEach(function(data){ %>
+                    <article class="posting <%= easterEgg%>">
+                        <div class="posting-content">
+                            <a class="posting-content-link" href="/articles/<%= data.id %>">
+                                <header class="posting-header">
+                                    <span class="posting-tags"><%= data.tags %></span>
+                                    <h2 class="posting-title"><%- data.title %></h2>
+                                </header>
+                                <section class="posting-excerpt">
+                                    <p><%= data.description %></p>
+                                </section>
+                                <div class="time-section">
+                                    <time class="posting-date" datetime="<%= moment(data.time).format( 'DD-MMM-YYYY') %>"><%= moment(data.time).format( 'DD-MMM-YYYY') %></time>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                <% });%>
+               </div>
+        </div>
+    </main>

@@ -1,0 +1,87 @@
+@media (min-width:900px){
+    .author-template .news-feed,.home-template .news-feed,.tag-template .news-feed{
+        margin-top:-70px;
+        padding-top:0
+    }
+    .home-template .site-nav{
+        position:relative;
+        top:-70px;
+        z-index:300
+    }
+}
+
+@media (max-width:500px){
+    .site-title{
+        font-size:3rem
+    }
+    .site-description{
+        font-size:1.8rem
+    }
+    .site-logo{
+        margin-top: -15px;
+        height: 110px;
+    }
+}
+@media (max-width:700px){
+    .site-header{
+        padding-right:0;
+        padding-left:0;
+    }
+    .site-nav-left{
+        margin-right:0;
+        padding-left:4vw
+    }
+    .site-nav-right{
+        display:none
+    }
+}
+
+@media (max-width:660px){
+    .news-feed{
+        padding-top:5vw
+    }
+    .posting{
+        margin:0 20px 5vw
+    }
+    #site-main-index{
+        z-index: 100;
+        margin-top: 0;
+    }
+    .site-main {
+        margin-top: 55px;
+    }
+}
+
+
+/* 404 */
+@media (max-width:767px) {
+    .crop {
+        width: 98%;
+        height: 398px;
+    }
+
+    .crop img {
+        width: 100%;
+        height: 400px;
+    }
+
+}
+
+.whit-e-nav-logo-mob {
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+}
+
+.whit-e-nav-logo-mob .whit-e-svg-signet {
+    width: auto;
+    height: 20px;
+}
+.whit-e-nav-logo-mob .whit-e-svg-logo {
+    width: auto;
+    height: 27px;
+}

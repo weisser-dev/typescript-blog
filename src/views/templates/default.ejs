@@ -1,0 +1,20 @@
+<!DOCTYPE html lang="en">
+<html>
+    <%- include head.ejs %>
+    <body>
+        <div class="site-wrapper">
+            <!-- Header -->
+            <%- include header.ejs %>
+            <!-- /Header -->
+
+            <!-- Content -->
+            <%- include(page) %>
+            <!-- /Content -->
+
+            <!-- Footer -->
+            <%- include footer.ejs %>
+            <!-- /Footer -->
+        </div>
+
+    </body>
+</html>

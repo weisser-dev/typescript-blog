@@ -1,0 +1,61 @@
+<header class="whit-e-head">
+    <nav class="whit-e-navbar inner">
+        <div class="whit-e-navbar-left">
+            <a class="whit-e-nav-logo whit-e-navbar-item" href="/">
+                <img class="whit-e-svg-signet" src="/images/signet_positive.svg" alt="WHIT-E.COM">
+                <img class="whit-e-svg-logo" src="/images/logo_b_positive_wo.svg" alt="WHIT-E.COM">
+                <div class="whit-e-nav-logo-suffix">
+                    <% if(typeof filter !== 'undefined' && filter !== "home" && filter.length > 0) { %>
+                        <%= filter %>
+                    <% } else { %>
+                        Blog
+                    <% } %>
+                </div></a>
+        </div>
+        <div class="whit-e-navbar-right">
+        <% if(typeof filter !== 'undefined' && filter === "home") { %>
+           <a class="whit-e-navbar-item active" href="/">Home</a>
+           <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
+        <% } else if(typeof filter !== 'undefined' && filter === "about") { %>
+            <a class="whit-e-navbar-item" href="/">Home</a>
+            <a class="whit-e-navbar-item active" href="https://weisser.dev">About</a>
+        <% } else { %>
+            <a class="whit-e-navbar-item" href="/">Home</a>
+            <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
+        <% } %>
+            <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
+                <img src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo">
+                <span>Github</span>
+            </a>
+        </div>
+    </nav>
+</header>
+<header class="whit-e-mobilehead">
+    <nav class="whit-e-mobilenavbar">
+        <a class="whit-e-nav-burger" href="#">
+            <div class="hamburger">
+                <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+            </div>
+        </a>
+        <a class="whit-e-nav-logo-mob" href="/">
+            <img class="whit-e-svg-signet" src="/images/signet_positive.svg" alt="WHIT-E.COM">
+            <img class="whit-e-svg-logo" src="/images/logo_b_positive_wo.svg" alt="WHIT-E.COM">
+        </a>
+    </nav>
+    <div class="whit-e-mobilemenu">
+        <% if(typeof filter !== 'undefined' && filter === "home") { %>
+           <a class="whit-e-navbar-item active" href="/">Home</a>
+           <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
+        <% } else if(typeof filter !== 'undefined' && filter === "about"){ %>
+            <a class="whit-e-navbar-item" href="/">Home</a>
+            <a class="whit-e-navbar-item active" href="https://weisser.dev">About</a>
+        <% } else { %>
+                <a class="whit-e-navbar-item" href="/">Home</a>
+                <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
+        <% } %>
+        <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
+            <img src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo">
+            <span>Github</span>
+        </a>
+    </div>
+</header>
