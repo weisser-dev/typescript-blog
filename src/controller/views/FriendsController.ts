@@ -11,10 +11,7 @@ export async function showFriends(req: Request, res: Response) {
     const friendRepository = getManager().getRepository(Friend);
     const pageUrl = "http://www.whit-e.com" + req.originalUrl;
     // load all friends
-    const friends = await friendRepository.createQueryBuilder("friend").take(2);
-    console.log(friends);
-
-    console.log(friends);
+    const friends = await friendRepository.find();
     // return loaded friends
     res.render('templates/default', {page: '../content/friends', 
     pageUrl: pageUrl, 

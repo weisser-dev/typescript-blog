@@ -1,8 +1,8 @@
 import {showArticleById} from "../controller/views/ArticleController";
+import {showFriends} from '..//controller/views/FriendsController';
 import {articleSaveAction} from "../controller/admin/actions/ArticleSaveAction";
 import {showIndex} from "../controller/views/IndexController";
-import { IAppRoutes } from './interfaces/IAppRoutes';
-import { showFriends } from 'src/controller/views/FriendsController';
+import {IAppRoutes} from './interfaces/IAppRoutes';
 
 /**
  * All application routes.
