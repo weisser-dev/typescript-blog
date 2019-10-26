@@ -51,6 +51,10 @@
 	height: 96px
 }
 
+.rss-icon {
+    margin-left: 12px;
+}
+
 @media (max-width:650px){
     .site-footer-content{
         -ms-flex-direction:column;

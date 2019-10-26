@@ -19,7 +19,7 @@ export async function showIndex(req: Request, res: Response) {
     .where("article.visible = 0")
     .orderBy("article.time", "DESC")
     .skip(0)
-    .take(9)
+    //.take(9)
     .getMany();
     
     // return loaded articles
