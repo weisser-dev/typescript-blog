@@ -63,6 +63,14 @@ createConnection().then(async connection => {
         });
     });
 
+    // Error Routes
+    // catch 404 and forward to error handler
+    app.use(function(req, res) {
+        let pageUrl = "http://www.whit-e.com" + req.originalUrl;
+        let page = "../content/static/404";
+        res.render('templates/default', { page: page, pageUrl: pageUrl});
+    });
+
     // error handler
     // noinspection JSUnusedLocalSymbols
     app.use(function(err: ResponseError, req: Request, res: Response, next: NextFunction) {
