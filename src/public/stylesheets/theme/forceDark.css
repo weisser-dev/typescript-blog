@@ -31,11 +31,11 @@ body {
     content: url(/images/signet_negative.svg);
 }
 
-.svg-logo-light{
+.whit-e-nav-logo .svg-logo-light{
     display: none;
 }
 
-.svg-logo-dark{
+.whit-e-nav-logo .svg-logo-dark{
     display: block;
 }
 
