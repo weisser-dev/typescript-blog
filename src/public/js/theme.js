@@ -38,15 +38,5 @@ function unloadDarkTheme() {
 
 function loadDarkTheme() {
     localStorage.setItem("customTheme", "dark");
-    $('head').append('<link id="forceDarkTheme" rel="stylesheet" type="text/css" href="/stylesheets/forceDark.css">');
-}
-
-function removeCssFile(filename){
-    var targetelement="link"
-    var targetattr="href"
-    var allsuspects=document.getElementsByTagName(targetelement)
-    for (var i=allsuspects.length; i>=0; i--){ //search backwards within nodelist for matching elements to remove
-    if (allsuspects[i] && allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(filename)!=-1)
-        allsuspects[i].parentNode.removeChild(allsuspects[i]) //remove element by calling parentNode.removeChild()
-    }
+    $('head').append('<link id="forceDarkTheme" rel="stylesheet" type="text/css" href="/stylesheets/theme/forceDark.css">');
 }
