@@ -52,11 +52,23 @@
     width:auto;
     height:20px;
 }
-.whit-e-nav-logo .whit-e-svg-logo{
+
+.whit-e-nav-logo .com-svg-logo{
     width:auto;
     height:30px;
     margin-left: 5px;
 }
+.whit-e-nav-logo .dev-svg-logo{
+    width:auto;
+    height:30px;
+    margin-left: 5px;
+}
+.whit-e-nav-logo .tech-svg-logo{
+    width:auto;
+    height:30px;
+    margin-left: 5px;
+}
+
 .whit-e-nav-logo-suffix{
     position:relative;
     margin:0 0 0 12px;
