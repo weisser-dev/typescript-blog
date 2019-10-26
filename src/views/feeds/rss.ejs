@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
-
-<channel>
-  <title>WHIT-E.COM Dev Blog</title>
-  <link><%= baseUrl %></link>
-  <language>en-us</language>
-  <category>IT/DevOps/Web development/Tech</category>
-  <description>Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!</description>
-  <% articles.forEach(function(article){ %>
-  <item>
-    <title><%= article.title %></title>
-    <link><%= baseUrl %>/articles/<%= article.id %></link>
-    <description><%= article.description %></description>
-    <pubDate><%= moment(article.time).format( 'ddd, DD MMM YYYY') %></pubDate>
-    <% article.tags.split(',').forEach(function(tag){ %>
-        <category><%= tag.trim() %></category>
-    <% });%>      
-  </item>
-  <% });%>
-</channel>
-
+    <channel>
+    <title>WHIT-E.COM Dev Blog</title>
+    <link><%= baseUrl %></link>
+    <language>en-us</language>
+    <category>IT/DevOps/Web development/Tech</category>
+    <description>Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!</description>
+    <% articles.forEach(function(article){ %>
+    <item>
+        <title><%= article.title %></title>
+        <link><%= baseUrl %>/articles/<%= article.id %></link>
+        <description><%= article.description %></description>
+        <pubDate><%= moment(article.time).format( 'ddd, DD MMM YYYY') %></pubDate>
+        <% article.tags.split(',').forEach(function(tag){ %>
+            <category><%= tag.trim() %></category>
+        <% });%>      
+    </item>
+    <% });%>
+    </channel>
 </rss>
