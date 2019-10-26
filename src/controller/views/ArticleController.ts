@@ -28,14 +28,16 @@ export async function showArticleById(req: Request, res: Response) {
     const md = new markdown();
     article.content = md.render(article.content);
 
-    const pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const altTag = req.get('host');
     // render ejs with loaded article
     res.render('templates/default', {
         page: "static",
-        pageUrl: pageUrl,
+        baseUrl: baseUrl,
         id: req.params.id,
         params: req.query,
         data: article,
+        altTag: altTag,
         filter: "",
         tags: "",
         moment: moment

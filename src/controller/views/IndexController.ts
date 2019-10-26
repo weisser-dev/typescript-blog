@@ -11,7 +11,8 @@ export async function showIndex(req: Request, res: Response) {
 
     // get a article repository to perform operations with post
     const articleRepository = getManager().getRepository(Article);
-    const pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const altTag = req.get('host');
     // load all articles
     //const articles = await articleRepository.find();
 
@@ -22,15 +23,18 @@ export async function showIndex(req: Request, res: Response) {
     //.take(9)
     .getMany();
     
+   
+
     // return loaded articles
     //res.send(articles);
     res.render('templates/default', {page: '../content/index', 
-        pageUrl: pageUrl, 
+        baseUrl: baseUrl, 
         id: 'index', 
         data: articles, 
         tags: "", 
         filter: "",
         easterEgg: "", 
+        altTag: altTag,
         moment: moment
     });
 }

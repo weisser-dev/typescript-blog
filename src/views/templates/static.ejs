@@ -2,11 +2,11 @@
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<meta property="og:image" content="https://whit-e.com/images/metaimg.JPG">
+<meta property="og:image" content="https://<%= altTag.toUpperCase() %>/images/metaimg.JPG">
 <meta property="og:title" content="<%- data.title%>">
-<meta property="og:site_name" content="https://whit-e.com/<%= data.id%>">
+<meta property="og:site_name" content="https://<%= altTag.toUpperCase() %>/<%= data.id%>">
 <meta property="og:description" content="<%= data.description%>">
-<meta property="og:url" content="https://whit-e.com/<%= data.id%>">
+<meta property="og:url" content="https://<%= altTag.toUpperCase() %>/<%= data.id%>">
 <meta name="description" content="<%= data.description%>">
 
 <main id="site-main" class="site-main outer">
@@ -24,7 +24,7 @@
         <div id="disqus_thread"></div>
 		<script>
 			var disqus_config = function () {
-				this.page.url = "<%= pageUrl %>";
+				this.page.url = "<%= baseUrl %>";
 				this.page.identifier = "<%= data.title %>";
 			};
 			(function() { 

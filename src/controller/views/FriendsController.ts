@@ -9,13 +9,15 @@ export async function showFriends(req: Request, res: Response) {
 
     // get a friend repository to perform operations with post
     const friendRepository = getManager().getRepository(Friend);
-    const pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const altTag = req.get('host');
     // load all friends
     const friends = await friendRepository.find();
     // return loaded friends
     res.render('templates/default', {page: '../content/friends', 
-    pageUrl: pageUrl, 
+    baseUrl: baseUrl, 
     id: 'friends', 
     data: friends, 
+    altTag: altTag,
     tags: ""}); 
 }

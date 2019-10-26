@@ -66,16 +66,16 @@ createConnection().then(async connection => {
     // Error Routes
     // catch 404 and forward to error handler
     app.use(function(req, res) {
-        let pageUrl = "http://www.whit-e.com" + req.originalUrl;
+        let baseUrl = "http://www.whit-e.com" + req.originalUrl;
         let page = "../content/static/404";
-        res.render('templates/default', { page: page, pageUrl: pageUrl});
+        res.render('templates/default', { page: page, baseUrl: baseUrl});
     });
 
     // error handler
     // noinspection JSUnusedLocalSymbols
     app.use(function(err: ResponseError, req: Request, res: Response, next: NextFunction) {
         console.log(err);
-        let pageUrl = "http://www.whit-e.com" + req.originalUrl;
+        let baseUrl = "http://www.whit-e.com" + req.originalUrl;
         let page = "../content/static/404";
         // set locals, only providing error in development
         res.locals.message = err.message;
@@ -83,7 +83,7 @@ createConnection().then(async connection => {
         // render the error page
         res.status(err.status || 404);
         //res.render('error');
-        res.render('templates/default', { page: page, pageUrl: pageUrl});
+        res.render('templates/default', { page: page, baseUrl: baseUrl});
     });
 
     // run app

@@ -21,6 +21,7 @@ export async function showFeed(req: Request, res: Response) {
      .getMany();
 
     const baseUrl = 'https://' + req.get('host');
+    const altTag = req.get('host');
     // render ejs with loaded article
 
     res.setHeader('content-type', 'text/xml');
@@ -30,6 +31,7 @@ export async function showFeed(req: Request, res: Response) {
     res.render('feeds/' + feedTemplate, {
         baseUrl: baseUrl,
         articles: articles,
+        altTag: altTag,
         moment: moment
     })
 }
