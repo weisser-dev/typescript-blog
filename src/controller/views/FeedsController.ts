@@ -10,7 +10,31 @@ const moment = require('moment');
 /**
  * Loads article by a given id.
  */
-export async function showArticleById(req: Request, res: Response) {
+export async function showSitemap(req: Request, res: Response) {
+
+     // get a article repository to perform operations with post
+     const articleRepository = getManager().getRepository(Article);
+     // load all articles
+     //const articles = await articleRepository.find();
+ 
+     const articles = await articleRepository.createQueryBuilder("article") // first argument is an alias. Alias is what you are selecting - photos. You must specify it.
+     .where("article.visible = 0")
+     .orderBy("article.time", "DESC")
+     .getMany();
+
+    const baseUrl = req.protocol + '://' + req.get('host');
+    // render ejs with loaded article
+
+    res.setHeader('content-type', 'text/xml');
+    res.render('feeds/sitemap', {
+        baseUrl: baseUrl,
+        articles: articles,
+        moment: moment
+    })
+}
+
+
+export async function showRss(req: Request, res: Response) {
 
     // get a article repository to perform operations with article
     const articleRepository = getManager().getRepository(Article);
@@ -32,6 +56,7 @@ export async function showArticleById(req: Request, res: Response) {
 
     const pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     // render ejs with loaded article
+    res.setHeader('content-type', 'text/xml');
     res.render('templates/default', {
         page: "static",
         pageUrl: pageUrl,
@@ -43,3 +68,4 @@ export async function showArticleById(req: Request, res: Response) {
         moment: moment
     });
 }
+

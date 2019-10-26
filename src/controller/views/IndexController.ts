@@ -11,7 +11,7 @@ export async function showIndex(req: Request, res: Response) {
 
     // get a article repository to perform operations with post
     const articleRepository = getManager().getRepository(Article);
-    const pageUrl = "http://www.whit-e.com" + req.originalUrl;
+    const pageUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     // load all articles
     //const articles = await articleRepository.find();
 

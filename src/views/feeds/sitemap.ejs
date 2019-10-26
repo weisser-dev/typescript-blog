@@ -1,0 +1,18 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc><%= baseUrl %></loc>
+        <lastmod>2019-10-13T22:02:27+00:00</lastmod>
+        <priority>1.00</priority>
+    </url>
+
+    <!-- for each article-->
+    <% articles.forEach(function(article){ %>
+    <url>
+        <loc><%= baseUrl %>/articles/<%= article.id %></loc>
+        <lastmod><%= moment(article.time).format( 'DD-MMM-YYYY') %></lastmod>
+        <priority>0.80</priority>
+    </url>
+    <% });%>
+
+    <!-- static content -->
+</urlset>
