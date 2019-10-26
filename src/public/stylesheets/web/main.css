@@ -230,3 +230,10 @@ body{
 .theme-toggle:hover {
     opacity: 1;
 }
+
+@media (hover: none) and (pointer: coarse) {
+    .theme-toggle:hover {
+        opacity: 0.4;
+    }
+    
+}
