@@ -59,6 +59,14 @@
     margin-left: 5px;
 }
 
+.whit-e-nav-logo .svg-logo .dark{
+    display: none;
+}
+
+.whit-e-nav-logo .svg-logo .light{
+    display: block;
+}
+
 .whit-e-nav-logo-suffix{
     position:relative;
     margin:0 0 0 12px;
