@@ -366,3 +366,9 @@
         margin-top: 12px;
     }
 }
+
+.site-logo-svg {
+    height: 50%;
+    width: 100%;
+    display: inline-block;
+}

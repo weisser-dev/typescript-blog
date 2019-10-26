@@ -152,3 +152,9 @@
 .whit-e-dropdown,.whit-e-mobiilehead-open,.whit-e-mobilehead{
     z-index:4
 }
+
+.site-logo-svg {
+    height: 50%;
+    width: 100%;
+    display: inline-block;
+}
