@@ -115,10 +115,19 @@
     margin-right:-33px;
     padding:13px 0
 }
-.whit-e-mobilenavbar .whit-e-svg{
+
+.whit-e-mobilenavbar .svg-logo-light{
     width:auto;
-    height:23px
+    height:23px;
+    display: block;
 }
+
+.whit-e-mobilenavbar .svg-logo-dark{
+    width:auto;
+    height:23px;
+    display: none;
+}
+
 .whit-e-mobilenavbar .whit-e-login-link{
     display:block;
     padding:14px 15px;
