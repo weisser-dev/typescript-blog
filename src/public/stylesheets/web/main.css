@@ -97,6 +97,7 @@ body{
 .site-logo{
     margin-bottom: 80px;
     height: 135px;
+    min-width: 350px;
 }
 .site-description{
     z-index:10;
