@@ -1,8 +1,20 @@
-    <header class="site-header outer " style="background-image: url(/images/bg.jpg);">     
+
+    <meta property="og:image" content="https://<%= altTag.toLowerCase() %>/images/metaimg_<%= altTag.toLowerCase() %>.JPG">
+    <meta property="og:title" content="<%= altTag.toUpperCase() %> - Dev Blog">
+    <meta property="og:site_name" content="https://<%= altTag.toLowerCase() %>">
+    <meta property="og:description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
+    <meta property="og:url" content="https://<%= altTag.toUpperCase() %>">
+    <meta name="description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
+    
+    <header class="site-header outer " style="background-image: url(/images/bg.jpg);">
+        <title><%= altTag.toUpperCase() %> - DEV Blog by Erik Weisser</title>        
         <div class="inner">
             <div class="site-header-content">
                 <h1 class="site-title">
-                    <img class="site-logo" src="/images/logo_b_negative.svg" alt="<%= altTag.toUpperCase() %>">
+                    <div class="site-logo">
+                            <img class="site-logo-svg" src="/images/signet_negative.svg" alt="<%= altTag.toUpperCase() %>">
+                            <img class="site-logo-svg" src="/images/<%=altTag.toLowerCase()%>_logo_negative.svg" alt="<%= altTag.toUpperCase() %>">
+                    </div>
                 </h1>
             </div>
         </div>
