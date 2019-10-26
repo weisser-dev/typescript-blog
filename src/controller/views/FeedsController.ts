@@ -20,7 +20,7 @@ export async function showFeed(req: Request, res: Response) {
      .orderBy("article.time", "DESC")
      .getMany();
 
-    const baseUrl = req.protocol + '://' + req.get('host');
+    const baseUrl = 'https://' + req.get('host');
     // render ejs with loaded article
 
     res.setHeader('content-type', 'text/xml');
