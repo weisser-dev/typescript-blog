@@ -31,14 +31,8 @@ body {
     content: url(/images/signet_negative.svg);
 }
 
-.com-svg-logo{
+.svg-logo{
     content: url(/images/logo_b_negative_wo.svg);
-}
-.dev-svg-logo{
-    content: url(/images/dev_logo_negative.svg);
-}
-.tech-svg-logo{
-    content: url(/images/tech_logo_negative.svg);
 }
 
 .whit-e-head {
