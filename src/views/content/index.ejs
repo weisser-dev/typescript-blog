@@ -23,7 +23,7 @@
                 <% data.forEach(function(data){ %>
                     <article class="posting <%= easterEgg%>">
                         <div class="posting-content">
-                            <a class="posting-content-link" href="/articles/<%= data.id %>">
+                            <a title="<%- data.title %>" class="posting-content-link" href="/articles/<%= data.id %>">
                                 <header class="posting-header">
                                     <span class="posting-tags"><%= data.tags %></span>
                                     <h2 class="posting-title"><%- data.title %></h2>
