@@ -2,9 +2,9 @@
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<meta property="og:image" content="https://<%= altTag.toUpperCase() %>/images/metaimg.JPG">
+<meta property="og:image" content="https://<%= altTag.toLowerCase() %>/images/metaimg_<%= altTag.toLowerCase() %>.JPG">
 <meta property="og:title" content="<%- data.title%>">
-<meta property="og:site_name" content="https://<%= altTag.toUpperCase() %>/<%= data.id%>">
+<meta property="og:site_name" content="https://<%= altTag.toLowerCase() %>/<%= data.id%>">
 <meta property="og:description" content="<%= data.description%>">
 <meta property="og:url" content="https://<%= altTag.toUpperCase() %>/<%= data.id%>">
 <meta name="description" content="<%= data.description%>">
