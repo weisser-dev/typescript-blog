@@ -40,6 +40,14 @@
         display: block;
     }
 
+    .whit-e-nav-logo-mob .svg-logo-light{
+        display: none;
+    }
+    
+    .whit-e-nav-logo-mob .svg-logo-dark{
+        display: block;
+    }
+
     .whit-e-head {
         border-bottom: 1px solid rgb(24, 48, 62);
         background: rgba(32, 27, 27, 0.97);

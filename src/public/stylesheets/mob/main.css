@@ -82,7 +82,15 @@
     height: 20px;
 }
 
-.whit-e-nav-logo-mob .svg-logo{
+.whit-e-nav-logo-mob .svg-logo-light{
     width: auto;
     height: 27px;
+    display: inline;
+}
+
+
+.whit-e-nav-logo-mob .svg-logo-dark{
+    width: auto;
+    height: 27px;
+    display: none;
 }
