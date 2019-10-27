@@ -27,47 +27,40 @@ export async function doLoginAction(req: Request, res: Response, next: NextFunct
   const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   const altTag = req.get('host');
   
+  var loggedIn = false;
   if (req.body.logemail && req.body.logpassword) {
     const userRepository = getManager().getRepository(User);
-    const user = await userRepository.findOne(req.body.logemail);
-    if (!user) {
-      return res.render('templates/default', {page: '../admin/login', 
-      baseUrl: baseUrl, 
-      altTag: altTag,
-      errormsg: "Wrong Credentials - Try Again!",
-      tags: ""}); 
-    }
+    const users = await userRepository.find();
 
-    var crypto = require('crypto');
-    var password = crypto.createHash('md5').update(req.body.logpassword).digest("hex");
-    var loginData = req.body.logemail + password;
-    console.log(password);
-    var userData = user.email + user.password;
-    if(loginData === userData) {  
-      if(req.session) {
-        var hour = 3600000
-        req.session.cookie.expires = new Date(Date.now() + hour)
-        req.session.cookie.maxAge = hour
-        req.session.userId = user.id;
-        req.session.save(function(err) {
-          if(!err) {
-            return res.redirect('/admin');
+    users.forEach(user => {
+      if(user.email === req.body.logemail) {
+        var crypto = require('crypto');
+        var password = crypto.createHash('md5').update(req.body.logpassword).digest("hex");
+        var loginData = req.body.logemail + password;
+        var userData = user.email + user.password;
+        if(loginData === userData) {  
+          if(req.session) {
+            var hour = 3600000
+            req.session.cookie.expires = new Date(Date.now() + hour)
+            req.session.cookie.maxAge = hour
+            req.session.userId = user.id;
+            loggedIn = true;
+            req.session.save(function(err) {
+              if(!err) {
+                return res.redirect('/admin');
+              }
+            })
           }
-        })
+        }
       }
-    } else {
-      return res.render('templates/default', {page: '../admin/login', 
+    });
+  } 
+  if(!loggedIn) {
+    return res.render('templates/default', {page: '../admin/login', 
       baseUrl: baseUrl, 
       altTag: altTag,
       errormsg: "Wrong Credentials - Try Again!",
       tags: ""}); 
-    }
-  } else {
-    return res.render('templates/default', {page: '../admin/login', 
-    baseUrl: baseUrl, 
-    altTag: altTag,
-    errormsg: "All Fields Required - Try Again!",
-    tags: ""}); 
   }
 }
 

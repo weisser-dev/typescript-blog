@@ -27,7 +27,7 @@ export async function showFeed(req: Request, res: Response) {
     res.setHeader('content-type', 'text/xml');
     var feedTemplate: string = req.params.feed;
     feedTemplate = feedTemplate.replace('.xml', '');
-    res.render('feeds/' + feedTemplate, {
+    return res.render('feeds/' + feedTemplate, {
         baseUrl: baseUrl,
         articles: articles,
         altTag: altTag,
