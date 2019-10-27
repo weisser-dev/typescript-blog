@@ -119,3 +119,15 @@ h1{
 .btn-add {
     margin: 10px 14px 0 0;
 }
+
+.logout {
+	position: absolute;
+    bottom: 10px;
+    right: 0;
+    opacity: 0.5;
+}
+
+.logout .btn {
+	color: white;
+    background: dimgray;
+}
