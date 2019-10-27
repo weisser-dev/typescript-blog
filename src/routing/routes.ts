@@ -33,6 +33,10 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
         action: showAdmin
     },     
     {
+        path: "/admin/login",
+        action: showAdmin
+    },     
+    {
         path: "/admin/editArticle/:id",
         action: editArticle
     },     
