@@ -41,6 +41,7 @@ export async function showAdmin(req: Request, res: Response, next: NextFunction)
     res.render('templates/default', {page: '../admin/login', 
     baseUrl: baseUrl, 
     altTag: altTag,
+    errormsg: undefined,
     tags: ""}); 
   }
 }

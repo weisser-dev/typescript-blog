@@ -34,13 +34,14 @@ export async function doLoginAction(req: Request, res: Response, next: NextFunct
       return res.render('templates/default', {page: '../admin/login', 
       baseUrl: baseUrl, 
       altTag: altTag,
-      error: "Wrong Credentials - Try Again!",
+      errormsg: "Wrong Credentials - Try Again!",
       tags: ""}); 
     }
 
     var crypto = require('crypto');
     var password = crypto.createHash('md5').update(req.body.logpassword).digest("hex");
     var loginData = req.body.logemail + password;
+    console.log(password);
     var userData = user.email + user.password;
     if(loginData === userData) {  
       if(req.session) {
@@ -58,14 +59,14 @@ export async function doLoginAction(req: Request, res: Response, next: NextFunct
       return res.render('templates/default', {page: '../admin/login', 
       baseUrl: baseUrl, 
       altTag: altTag,
-      error: "Wrong Credentials - Try Again!",
+      errormsg: "Wrong Credentials - Try Again!",
       tags: ""}); 
     }
   } else {
     return res.render('templates/default', {page: '../admin/login', 
     baseUrl: baseUrl, 
     altTag: altTag,
-    error: "All Fields Required - Try Again!",
+    errormsg: "All Fields Required - Try Again!",
     tags: ""}); 
   }
 }

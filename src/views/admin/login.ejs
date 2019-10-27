@@ -2,6 +2,9 @@
     <div class="login">
         <link rel='stylesheet' href='/stylesheets/web/admin/login.css' />
         <h1>Login</h1>
+        <% if(errormsg) {%> 
+            <div class="isa_error"><%= errormsg %></div>    
+        <% } %>
         <form action="/admin/login" method="post">
             <input type="text" name="logemail" placeholder="Email" required="required" />
             <input type="password" name="logpassword" placeholder="Password" required="required" />
