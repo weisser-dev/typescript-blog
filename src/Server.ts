@@ -1,4 +1,5 @@
 import cookieParser from 'cookie-parser';
+import session from 'express-session';
 import express from 'express';
 import { Request, Response } from 'express';
 import logger from 'morgan';
@@ -6,13 +7,10 @@ import path from 'path';
 import favicon from 'serve-favicon';
 import { NextFunction } from 'connect';
 import { ResponseError } from 'superagent';
-
+import uuid from 'uuid';
 import "reflect-metadata";
-import { createConnection } from 'typeorm';
-
+import { createConnection, UpdateQueryBuilder } from 'typeorm';
 import {AppGetRoutes, AppPostRoutes} from "./routing/routes";
-
-
 
 // create connection with database
 // note that it's not active database connection
@@ -21,12 +19,18 @@ createConnection().then(async connection => {
 
     // create express app
     const app = express();
-
-
+    
     app.use(logger('dev'));
     app.use(express.json());
     app.use(express.urlencoded({extended: true}));
     app.use(cookieParser());
+    app.use(session({
+        secret: uuid.v4(),
+        resave: false,
+        saveUninitialized: true,
+        // @todo set secure true before deploy
+        cookie: { secure: false }
+    }))
     app.use(express.static(path.join(__dirname, 'public')));
 
     /**
@@ -66,24 +70,31 @@ createConnection().then(async connection => {
     // Error Routes
     // catch 404 and forward to error handler
     app.use(function(req, res) {
-        let baseUrl = "http://www.whit-e.com" + req.originalUrl;
-        let page = "../content/static/404";
-        res.render('templates/default', { page: page, baseUrl: baseUrl});
+        const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+        const page = "../content/static/404";
+        const altTag = req.get('host');
+    
+        res.removeHeader('content-type');
+        res.render('templates/default', { page: page, altTag: altTag, baseUrl: baseUrl});
     });
 
     // error handler
     // noinspection JSUnusedLocalSymbols
     app.use(function(err: ResponseError, req: Request, res: Response, next: NextFunction) {
         console.log(err);
-        let baseUrl = "http://www.whit-e.com" + req.originalUrl;
-        let page = "../content/static/404";
+
+        res.removeHeader('content-type');
+        const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+        const page = "../content/static/404";
+        const altTag = req.get('host');
+    
         // set locals, only providing error in development
         res.locals.message = err.message;
         res.locals.error = req.app.get('env') === 'development' ? err : {};
         // render the error page
         res.status(err.status || 404);
         //res.render('error');
-        res.render('templates/default', { page: page, baseUrl: baseUrl});
+        res.render('templates/default', { page: page, altTag: altTag, baseUrl: baseUrl});
     });
 
     // run app

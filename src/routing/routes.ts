@@ -1,10 +1,12 @@
 import {IAppRoutes} from './interfaces/IAppRoutes';
-import {articleSaveAction} from "../controller/admin/actions/ArticleSaveAction";
-import {showArticleById} from "../controller/views/ArticleController";
-import {showFriends} from '..//controller/views/FriendsController';
+import {articleUpdateAction} from "../controller/admin/actions/ArticleSaveAction";
+import {showArticleById, editArticle} from "../controller/views/ArticleController";
+import {showFriends} from '../controller/views/FriendsController';
 import {showIndex} from "../controller/views/IndexController";
 import {showStaticContent} from "../controller/views/StaticContentController";
-import {showFeed } from 'src/controller/views/FeedsController';
+import {showFeed} from 'src/controller/views/FeedsController';
+import {doLoginAction, doLogoutAction} from 'src/controller/admin/actions/AuthActionController';
+import {showAdmin} from 'src/controller/admin/AdminController';
 
 /**
  * All application routes.
@@ -25,7 +27,23 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
     {
         path: "/static/:id",
         action: showStaticContent
+    }, 
+    {
+        path: "/admin",
+        action: showAdmin
+    },     
+    {
+        path: "/admin/editArticle/:id",
+        action: editArticle
+    },     
+    {
+        path: "/admin/addArticle",
+        action: editArticle
     },  
+    {
+        path: "/logout",
+        action: doLogoutAction
+    },
     {
         path: "/:feed",
         action: showFeed
@@ -41,11 +59,11 @@ export const AppPostRoutes: IAppRoutes = { "routes":[
         action: showIndex
     },
     {
-        path: "/article/:id",
-        action: showArticleById
+        path: "/updateArticle",
+        action: articleUpdateAction
     },
     {
-        path: "/posts",
-        action: articleSaveAction
+        path: "/login",
+        action: doLoginAction
     }
 ]};

@@ -13,23 +13,18 @@ export async function showIndex(req: Request, res: Response) {
     const articleRepository = getManager().getRepository(Article);
     const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     const altTag = req.get('host');
+    
     // load all articles
-    //const articles = await articleRepository.find();
-
     const articles = await articleRepository.createQueryBuilder("article") // first argument is an alias. Alias is what you are selecting - photos. You must specify it.
-    .where("article.visible = 0")
+    .where("article.visible = true")
     .orderBy("article.time", "DESC")
     .skip(0)
     //.take(9)
     .getMany();
     
-   
-
     // return loaded articles
-    //res.send(articles);
     res.render('templates/default', {page: '../content/index', 
         baseUrl: baseUrl, 
-        id: 'index', 
         data: articles, 
         tags: "", 
         filter: "",

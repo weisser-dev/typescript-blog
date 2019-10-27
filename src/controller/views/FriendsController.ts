@@ -16,7 +16,6 @@ export async function showFriends(req: Request, res: Response) {
     // return loaded friends
     res.render('templates/default', {page: '../content/friends', 
     baseUrl: baseUrl, 
-    id: 'friends', 
     data: friends, 
     altTag: altTag,
     tags: ""}); 

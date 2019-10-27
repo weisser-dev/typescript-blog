@@ -1,0 +1,44 @@
+<link rel='stylesheet' href='/stylesheets/web/admin/overview.css' />
+<script src="/js/table.js"></script>
+
+<main id="site-main" class="site-main outer">
+    <div class="articles">
+        <h1>Articles</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Tags</th>
+                    <th>Date</th>
+                    <th>Visible</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                        <% if(articles) {articles.forEach(function(data){ %>
+                            <tr>
+                                <td><%= data.title %></td>
+                                <td><%= data.tags %></td>
+                                <td><%= data.time %></td>
+                                <td><%= data.visible %></td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                        <!--<button class="btn btn-danger" onClick="removeArticle(<%= data.id%>)">-</button>-->
+                                        <a href="/admin/editArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/edit.svg"/></button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% });}%>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a href="/admin/addArticle"><button class="btn btn-success btn-add">Add Article</button></a>
+        </div>
+    </div>
+</main>

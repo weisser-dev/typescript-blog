@@ -16,7 +16,7 @@ export async function showFeed(req: Request, res: Response) {
      //const articles = await articleRepository.find();
  
      const articles = await articleRepository.createQueryBuilder("article") // first argument is an alias. Alias is what you are selecting - photos. You must specify it.
-     .where("article.visible = 0")
+     .where("article.visible = true")
      .orderBy("article.time", "DESC")
      .getMany();
 

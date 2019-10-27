@@ -7,7 +7,6 @@ export function showStaticContent(req: Request, res: Response) {
     const page = '../content/static/' + req.params.id;
     res.render('templates/default', {page: page,
             baseUrl: baseUrl,
-            id: req.params.id, 
             params: req.query, 
             altTag: altTag,
             tags: ""});
