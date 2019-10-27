@@ -63,7 +63,7 @@ export const AppPostRoutes: IAppRoutes = { "routes":[
         action: articleUpdateAction
     },
     {
-        path: "/login",
+        path: "/admin/login",
         action: doLoginAction
     }
 ]};

@@ -31,13 +31,16 @@ export async function doLoginAction(req: Request, res: Response, next: NextFunct
     const userRepository = getManager().getRepository(User);
     const user = await userRepository.findOne(req.body.logemail);
     if (!user) {
-        res.status(404);
-        res.end();
-        return;
+      return res.render('templates/default', {page: '../admin', 
+      baseUrl: baseUrl, 
+      altTag: altTag,
+      error: "Wrong Credentials - Try Again!",
+      tags: ""}); 
     }
 
     var crypto = require('crypto');
     var password = crypto.createHash('md5').update(req.body.logpassword).digest("hex");
+    console.log(password);
     var loginData = req.body.logemail + password;
     var userData = user.email + user.password;
     if(loginData === userData) {  
@@ -53,14 +56,14 @@ export async function doLoginAction(req: Request, res: Response, next: NextFunct
         })
       }
     } else {
-      res.render('templates/default', {page: '../admin/login', 
+      return res.render('templates/default', {page: '../admin', 
       baseUrl: baseUrl, 
       altTag: altTag,
       error: "Wrong Credentials - Try Again!",
       tags: ""}); 
     }
   } else {
-    res.render('templates/default', {page: '../admin/login', 
+    return res.render('templates/default', {page: '../admin', 
     baseUrl: baseUrl, 
     altTag: altTag,
     error: "All Fields Required - Try Again!",
