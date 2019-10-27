@@ -27,14 +27,12 @@ export async function articleUpdateAction(req: Request, res: Response) {
             if(req.body.visible === "true") {
                 article.visible = true;
             } else {
-                console.log("false");
                 article.visible = false;
             }
             article.title = req.body.title;
             article.description = req.body.description;
             article.tags = req.body.tags;
             await articleRepository.save(article);
-            console.log("article updated");
         }    
     }
     

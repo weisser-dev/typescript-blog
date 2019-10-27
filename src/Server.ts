@@ -100,6 +100,6 @@ createConnection().then(async connection => {
     // run app
     app.listen(3000);
 
-    console.log("Express application is up and running on port 3000");
+    console.log("Server started!");
 
 }).catch(error => console.log("TypeORM connection error: ", error));
