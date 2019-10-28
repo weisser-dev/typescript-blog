@@ -1,24 +1,25 @@
 <main id="site-main-index" class="site-main outer " role="main">
         <div class="inner">
-            <div class="news-feed">
-                <% data.forEach(function(data){ %>
-                    <article class="posting <%= easterEgg%>">
-                        <div class="posting-content">
-                            <a title="<%- data.title %>" class="posting-content-link" href="/articles/<%= data.id %>">
-                                <header class="posting-header">
-                                    <span class="posting-tags"><%= data.tags %></span>
-                                    <h2 class="posting-title"><%- data.title %></h2>
-                                </header>
-                                <section class="posting-excerpt">
-                                    <p><%= data.description %></p>
-                                </section>
-                                <div class="time-section">
-                                    <time class="posting-date" datetime="<%= moment(data.time).format( 'DD-MMM-YYYY') %>"><%= moment(data.time).format( 'DD-MMM-YYYY') %></time>
-                                </div>
-                            </a>
-                        </div>
+            <div class="news-feed"> 
+                    <article>
+                        <h2>Archive</h2>
+                        <p></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Time</th>
+                                </tr>
+                                <% data.forEach(function(data){ %>
+                                <tr>
+                                    <td><a href="/articles/why-prefer-fp"><%- data.title %></a></td>
+                                    <td><%= moment(data.time).format( 'DD-MMM-YYYY') %></td>
+                                </tr>
+                                <% });%>
+                            </tbody>
+                        </table>
+                        <p></p>
                     </article>
-                <% });%>
                </div>
         </div>
     </main>
