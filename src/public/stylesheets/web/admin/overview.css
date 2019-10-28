@@ -18,6 +18,7 @@ table{
   border: 1px solid transparent;
   margin: 20px 0 0 20px;
   border-radius: 8px;
+  border-bottom-right-radius: 2px;
   position: relative;
   z-index: 2;
   }
@@ -27,7 +28,7 @@ table{
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
-  margin: -5px 0 0 20px;
+  margin: -1px 0 0 20px;
   border: 1px solid transparent;
 }
 th{
