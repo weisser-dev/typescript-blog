@@ -1,9 +1,9 @@
 .whit-e-btn{
     display:inline-block;
     outline:none;
-    border:1px solid #ccdfeb!important;
+    border:1px solid #ccdfeb;
     color:#738a94;
-    text-decoration:none!important;
+    text-decoration:none;
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -38,8 +38,8 @@
 .whit-e-nav-logo{
     -ms-flex-negative:0;
     flex-shrink:0;
-    display:-ms-flexbox!important;
-    display:flex!important;
+    display:-ms-flexbox;
+    display:flex;
     -ms-flex-align:center;
     align-items:center;
     margin-left:-12px;
