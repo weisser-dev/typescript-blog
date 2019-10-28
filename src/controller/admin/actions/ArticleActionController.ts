@@ -50,6 +50,17 @@ export async function articleExportAction(req: Request, res: Response) {
 }
 
 export async function articleDownloadAction(req: Request, res: Response) {
-    
+    const articleRepository = getManager().getRepository(Article);
+
+    if(req.session && req.session.userId) {
+        var article;
+        if(req.params && req.params.id) {
+            const articleRepository = getManager().getRepository(Article);
+            article= await articleRepository.findOne(req.params.id);
+            res.contentType('text/plain');
+            res.send('# ' + article.title + '\r\n' + article.content, { 'Content-Disposition': 'attachment; filename=' + article.id + '.md' }); 
+        }
+    }
+
     res.redirect("/admin");
 }
