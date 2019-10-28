@@ -1,6 +1,6 @@
 import {IAppRoutes} from './interfaces/IAppRoutes';
 import {articleUpdateAction, articleExportAction, articleDownloadAction} from "../controller/admin/actions/ArticleActionController";
-import {showArticleById, editArticle} from "../controller/views/ArticleController";
+import {showArticleById, editArticle, showArticles} from "../controller/views/ArticleController";
 import {showFriends} from '../controller/views/FriendsController';
 import {showIndex} from "../controller/views/IndexController";
 import {showStaticContent} from "../controller/views/StaticContentController";
