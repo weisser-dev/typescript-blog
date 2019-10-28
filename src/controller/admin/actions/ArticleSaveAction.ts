@@ -29,7 +29,7 @@ export async function articleUpdateAction(req: Request, res: Response) {
     
         if(article) {
             article.content = req.body.content;
-            if(req.body.visible === "true") {
+            if(req.body.visible == "true") {
                 article.visible = true;
             } else {
                 article.visible = false;
