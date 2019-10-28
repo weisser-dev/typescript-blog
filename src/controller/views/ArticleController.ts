@@ -34,8 +34,9 @@ export async function showArticleById(req: Request, res: Response) {
     console.log(req);
     var page = 'static';
     var amp = false;
-    if(req.path.includes("/amp")) {
+    if(req.path.includes("/amp/")) {
         amp = true;
+        article.content = article.content.replace("<img", "<amp-img");
     }
     res.render('templates/default', {
         page: page,
