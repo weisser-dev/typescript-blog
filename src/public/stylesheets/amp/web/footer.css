@@ -1,0 +1,72 @@
+.site-footer{
+    position:relative;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:#fff;
+    background:#000
+}
+.site-footer-content{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    -ms-flex-align:center;
+    align-items:center;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    font-size:1.3rem
+}
+.site-footer-content,.site-footer-content a{
+    color:hsla(0,0%,100%,.7)
+}
+.site-footer-content a:hover{
+    color:#fff;
+    text-decoration:none
+}
+.site-footer-nav{
+    display:-ms-flexbox;
+    display:flex
+}
+.site-footer-nav a{
+    position:relative;
+    margin-left:20px
+}
+.site-footer-nav a:before{
+    content:"";
+    position:absolute;
+    top:11px;
+    left:-11px;
+    display:block;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:100%
+}
+.site-footer-nav a:first-of-type:before{
+    display:none
+}
+
+.coinhive-miner {
+	width: 512px;
+	height: 96px
+}
+
+.rss-icon {
+    margin-left: 12px;
+}
+
+@media (max-width:650px){
+    .site-footer-content{
+        -ms-flex-direction:column;
+        flex-direction:column
+    }
+    .site-footer-nav a:first-child{
+        margin-left:0
+    }
+	
+	.coinhive-miner {
+		width: 100%;
+		height: 170px
+	}
+
+}
