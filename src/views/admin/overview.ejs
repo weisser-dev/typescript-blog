@@ -32,7 +32,10 @@
                                 <td style="width: 50px;">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                         <!--<button class="btn btn-danger" onClick="removeArticle(<%= data.id%>)">-</button>-->
+                                        <a href="/admin/downloadArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/download.svg"/></button></a>
                                         <a href="/admin/editArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/edit.svg"/></button></a>
+                                        <a href="/admin/exportArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/export.svg"/></button></a>
+                                    
                                     </div>
                                 </td>
                             </tr>
