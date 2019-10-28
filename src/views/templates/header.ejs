@@ -74,7 +74,9 @@
     </div>
     <% } else { %>
         <nav class="whit-e-mobilenavbar">
-                <a class="whit-e-nav-logo-mob" style="margin-top:-10px;font-size:xx-large;" href="/">Home</a>
+                <a class="whit-e-nav-logo-mob" style="color:white;margin-top:-5px;font-size:xx-large;" href="/">
+                    <% if(amp) { %> <%=altTag.replace('www.','').toUpperCase()%> - Dev <% } %>Blog
+                </a>
             </nav>
     <% } %>
 </header>
