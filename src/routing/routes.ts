@@ -45,27 +45,27 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
     {
         path: "/admin",
         action: showAdmin,
-        cache: 0
+        cache: 1
     },     
     {
         path: "/admin/login",
         action: showAdmin,
-        cache: 0
+        cache: 1
     },     
     {
         path: "/admin/editArticle/:id",
         action: editArticle,
-        cache: 0
+        cache: 1
     },     
     {
         path: "/admin/addArticle",
         action: editArticle,
-        cache:0
+        cache:1
     },  
     {
         path: "/logout",
         action: doLogoutAction,
-        cache: 0
+        cache: 1
     },
     {
         path: "/:feed",
@@ -86,21 +86,21 @@ export const AppPostRoutes: IAppRoutes = { "routes":[
     {
         path: "/updateArticle",
         action: articleUpdateAction,
-        cache: 0
+        cache: 1
     },
     {
         path: "/admin/exportArticle/:id",
         action: articleExportAction,
-        cache: 0
+        cache: 1
     },
     {
         path: "/admin/downloadArticle/:id",
         action: articleDownloadAction,
-        cache: 0
+        cache: 1
     },
     {
         path: "/admin/login",
         action: doLoginAction,
-        cache: 0
+        cache: 1
     }
 ]};
