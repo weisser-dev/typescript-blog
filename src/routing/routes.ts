@@ -15,22 +15,22 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
     {
         path: "/",
         action: showIndex,
-        cache: 1000
+        cache: 10
     },
     {
         path: "/articles/:id",
         action: showArticleById,
-        cache: 1000
+        cache: 10
     },
     {
         path: "/friends",
         action: showFriends,
-        cache: 1000
+        cache: 10
     },
     {
         path: "/static/:id",
         action: showStaticContent,
-        cache: 10000
+        cache: 10
     }, 
     {
         path: "/admin",
@@ -60,7 +60,7 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
     {
         path: "/:feed",
         action: showFeed,
-        cache: 1000
+        cache: 10
     }  
 ]};
 
