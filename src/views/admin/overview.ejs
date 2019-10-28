@@ -15,7 +15,7 @@
                     <th class="not-mob">Tags</th>
                     <th class="not-mob">Date</th>
                     <th class="not-mob">Visible</th>
-                    <th> </th>
+                    <th style="width: 50px;"> </th>
                 </tr>
             </thead>
             </table>
@@ -29,7 +29,7 @@
                                 <td class="not-mob"><%= data.tags %></td>
                                 <td class="not-mob"><%= data.time %></td>
                                 <td class="not-mob"><%= data.visible %></td>
-                                <td>
+                                <td style="width: 50px;">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                         <!--<button class="btn btn-danger" onClick="removeArticle(<%= data.id%>)">-</button>-->
                                         <a href="/admin/editArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/edit.svg"/></button></a>
