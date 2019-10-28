@@ -12,20 +12,22 @@
     <!-- Favicon -->
 
     <!-- Styles -->
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Tangerine"
-    />
-    <% if(amp) { %> <style amp-custom> </style><% } %>
-
     <% if(!amp) { %>
-    <link rel='stylesheet' href='/stylesheets/web/header.css' />
-    <link rel='stylesheet' href='/stylesheets/mob/header.css' />
-    <link rel='stylesheet' href='/stylesheets/elements.css' />
-    <link rel='stylesheet' href='/stylesheets/web/main.css' />
-    <link rel='stylesheet' href='/stylesheets/mob/main.css' />
-    <link rel='stylesheet' href='/stylesheets/web/footer.css' />
-    <link rel='stylesheet' href='/stylesheets/github_markdown.css' />
+        <link rel='stylesheet' href='/stylesheets/web/header.css' />
+        <link rel='stylesheet' href='/stylesheets/mob/header.css' />
+        <link rel='stylesheet' href='/stylesheets/elements.css' />
+        <link rel='stylesheet' href='/stylesheets/web/main.css' />
+        <link rel='stylesheet' href='/stylesheets/mob/main.css' />
+        <link rel='stylesheet' href='/stylesheets/web/footer.css' />
+        <link rel='stylesheet' href='/stylesheets/github_markdown.css' />
+    <% } else { %>
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/web/header.css" />
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/mob/header.css" />
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/elements.css" />
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/web/main.css" />
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/mob/main.css" />
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/web/footer.css" />
+        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/github_markdown.css" />
     <% } %>
     <!-- for dark theme-->
     <link id="darkTheme" rel='stylesheet' href='/stylesheets/theme/dark.css' />
