@@ -11,14 +11,19 @@ export async function articleUpdateAction(req: Request, res: Response) {
 
     // get a article repository to perform operations with article
     const articleRepository = getManager().getRepository(Article);
-    var article; 
+    var article;
+    var articles; 
     if(req.body && req.session && req.session.userId) {
         if(req.body.updateArticle) {
-            article = await articleRepository.findOne(req.body.id);
+            articles = await articleRepository.find();
+            articles.forEach((currentArticle: Article) => {
+                if(currentArticle.id === req.body.id) {
+                    article = currentArticle;
+                }
+            });
         } else {
             article = articleRepository.create();
             article.id = req.body.id;
-            
             article.time = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
         }
     
