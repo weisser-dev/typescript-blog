@@ -3,7 +3,7 @@
 
 <main id="site-main" class="site-main outer">
     <link rel='stylesheet' href='/stylesheets/web/admin/add.css' />
-    <h1><a href="/admin">< Back</a> | <% if(article) {%> Update <% } else { %>  Create <% } %> Article</h1>
+    <h1 class="add-heading"><a href="/admin">< Back</a> | <% if(article) {%> Update <% } else { %>  Create <% } %> Article</h1>
     <form id="update" name="update" action="/updateArticle" method="post">     
         <button type="submit" class="btn-form-top btn btn-primary btn-block btn-large">Update Article.</button>
         <input type="text" name="id" placeholder="id" required="required" <% if(article && article.id) {%> value="<%= article.id %>" readonly <% } %> />

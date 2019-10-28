@@ -12,6 +12,10 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#7740a0',GradientType=1 );
 }
 
+.add-heading {
+	color: #fff:
+}
+
 input { 
   width: 100%; 
 	margin-bottom: 10px; 
