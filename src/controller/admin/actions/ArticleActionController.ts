@@ -58,7 +58,7 @@ export async function articleDownloadAction(req: Request, res: Response) {
             const articleRepository = getManager().getRepository(Article);
             article= await articleRepository.findOne(req.params.id);
             res.contentType('text/plain');
-            res.send('# ' + article.title + '\r\n' + article.content, "{ 'Content-Disposition': 'attachment; filename='" + article.id + ".md }"); 
+            //res.send('# ' + article.title + '\r\n' + article.content, "{ 'Content-Disposition': 'attachment; filename='" + article.id + ".md }"); 
         }
     }
 
