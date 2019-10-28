@@ -17,7 +17,7 @@ export async function articleUpdateAction(req: Request, res: Response) {
         if(req.body.updateArticle) {
             articles = await articleRepository.find();
             articles.forEach((currentArticle: Article) => {
-                if(currentArticle.id === req.body.id) {
+                if(currentArticle.id == req.body.id) {
                     article = currentArticle;
                 }
             });
