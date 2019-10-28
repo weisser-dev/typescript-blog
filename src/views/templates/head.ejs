@@ -24,15 +24,9 @@
         <link id="darkTheme" rel='stylesheet' href='/stylesheets/theme/dark.css' />
     
     <% } else { %>
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/web/header.css" />
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/mob/header.css" />
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/elements.css" />
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/web/main.css" />
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/mob/main.css" />
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/web/footer.css" />
-        <link rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/github_markdown.css" />
-        <!-- for dark theme-->
-        <link id="darkTheme" rel='stylesheet' href="https://<%= altTag.replace('www.','').toLowerCase() %>/stylesheets/theme/dark.css"/>
+        <style amp-custom> 
+             <%- include ../../public/stylesheets/web/header.css %>
+        </style>
     <% } %>
     <% if(!amp) { %>
         <script src="/js/jquery-3.3.1.min.js"></script>        
