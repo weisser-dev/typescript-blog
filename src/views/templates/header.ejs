@@ -33,6 +33,7 @@
     </nav>
 </header>
 <header class="whit-e-mobilehead">
+    <<% if(!amp) { %>
     <nav class="whit-e-mobilenavbar">
         <a class="whit-e-nav-burger" href="#">
             <div class="hamburger">
@@ -40,9 +41,9 @@
             </div>
         </a>
         <a class="whit-e-nav-logo-mob" href="/">
-            <<% if(amp) { %>amp-<% } %>img <% if(amp) { %>layout="responsive"<% } %> class="whit-e-svg-signet" height="25px" width="20px" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
-            <<% if(amp) { %>amp-<% } %>img <% if(amp) { %>layout="responsive"<% } %> class="svg-logo-light" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
-            <<% if(amp) { %>amp-<% } %>img <% if(amp) { %>layout="responsive"<% } %> class="svg-logo-dark" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
+            <img class="whit-e-svg-signet" height="25px" width="20px" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></img>
+            <img class="svg-logo-light" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></img>
+            <img class="svg-logo-dark" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></img>
         </a>
     </nav>
     <div class="whit-e-mobilemenu">
@@ -57,8 +58,15 @@
                 <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
         <% } %>
         <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
-            <<% if(amp) { %>amp-<% } %>img <% if(amp) { %>layout="responsive"<% } %> height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"></<% if(amp) { %>amp- <% } %>img>
+            <img height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"/>
             <span>Github</span>
         </a>
     </div>
+    <% } else { %>
+        <nav class="whit-e-mobilenavbar">
+                <a class="whit-e-nav-logo-mob" href="/">
+                    Home    
+                </a>
+            </nav>
+    <% } %>
 </header>
