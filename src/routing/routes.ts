@@ -18,8 +18,12 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
         cache: 100
     },
     {
-        path: "/articles/",
+        path: "/archiv/",
         action: showArticles,
+        cache: 100
+    },{
+        path: "/articles/",
+        action: showIndex,
         cache: 100
     },
     {
