@@ -36,7 +36,7 @@ export async function showArticleById(req: Request, res: Response) {
     var amp = false;
     if(req.path.includes("/amp/")) {
         amp = true;
-        article.content = article.content.replace("<img", "<amp-img");
+        article.content = article.content.replace(new RegExp('<img', 'g'), "<amp-img width='200px' height='150px' layout='responsive'");
     }
     res.render('templates/default', {
         page: page,
