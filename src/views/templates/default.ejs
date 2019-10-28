@@ -12,7 +12,9 @@
             <!-- /Content -->
 
             <!-- Toggle for Darkmode and Lightmode-->
-            <%- include theme.ejs %>
+            <% if(!amp) { %>
+                <%- include theme.ejs %>
+            <% } %>
             <!-- /toggle -->
             
             <!-- Footer -->

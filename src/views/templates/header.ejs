@@ -2,9 +2,9 @@
     <nav class="whit-e-navbar inner">
         <div class="whit-e-navbar-left">
             <a class="whit-e-nav-logo whit-e-navbar-item" href="/">
-                <amp-img layout="responsive" class="whit-e-svg-signet" height="25px" width="20px" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></amp-img>
-                <amp-img layout="responsive" class="svg-logo-light" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></amp-img>
-                <amp-img layout="responsive" class="svg-logo-dark" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></amp-img>
+                <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> class="whit-e-svg-signet" height="25px" width="20px" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
+                <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> class="svg-logo-light" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
+                <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> class="svg-logo-dark" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
                 
                 <div class="whit-e-nav-logo-suffix">
                     <% if(typeof filter !== 'undefined' && filter !== "home" && filter.length > 0) { %>
@@ -26,7 +26,7 @@
             <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
         <% } %>
             <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
-                <amp-img layout="responsive" height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"></amp-img>
+                <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"></<% if(amp) { %>amp- <% } %>img>
                 <span>Github</span>
             </a>
         </div>
@@ -40,9 +40,9 @@
             </div>
         </a>
         <a class="whit-e-nav-logo-mob" href="/">
-            <amp-img layout="responsive" class="whit-e-svg-signet" height="25px" width="20px" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></amp-img>
-            <amp-img layout="responsive" class="svg-logo-light" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></amp-img>
-            <amp-img layout="responsive" class="svg-logo-dark" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></amp-img>
+            <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> class="whit-e-svg-signet" height="25px" width="20px" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
+            <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> class="svg-logo-light" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
+            <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> class="svg-logo-dark" height="25px" width="140px" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></<% if(amp) { %>amp- <% } %>img>
         </a>
     </nav>
     <div class="whit-e-mobilemenu">
@@ -57,7 +57,7 @@
                 <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
         <% } %>
         <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
-            <amp-img layout="responsive" height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"></amp-img>
+            <<% if(amp) { %>amp- <% } %>img <% if(amp) { %>layout="responsive"<% } %> height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"></<% if(amp) { %>amp- <% } %>img>
             <span>Github</span>
         </a>
     </div>

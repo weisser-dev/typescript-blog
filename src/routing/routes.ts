@@ -23,6 +23,11 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
         cache: 10
     },
     {
+        path: "/articles/:id/amp",
+        action: showArticleById,
+        cache: 10
+    },
+    {
         path: "/friends",
         action: showFriends,
         cache: 10

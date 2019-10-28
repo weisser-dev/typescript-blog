@@ -31,8 +31,15 @@ export async function showArticleById(req: Request, res: Response) {
     const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     const altTag = req.get('host');
     // render ejs with loaded article
+    console.log(req);
+    var page = 'static';
+    var amp = false;
+    if(req.path.includes("/amp")) {
+        amp = true;
+    }
     res.render('templates/default', {
-        page: "static",
+        page: page,
+        amp: amp,
         baseUrl: baseUrl,
         params: req.query,
         data: article,
@@ -62,6 +69,7 @@ export async function editArticle(req: Request, res: Response) {
             page: "../admin/add",
             baseUrl: baseUrl,
             params: req.query,
+            amp: false,
             article: article,
             altTag: altTag,
             filter: "",
@@ -71,6 +79,7 @@ export async function editArticle(req: Request, res: Response) {
     }else {
         res.render('templates/default', {page: '../admin/login', 
         baseUrl: baseUrl, 
+        amp: false,
         altTag: altTag,
         tags: ""}); 
       }

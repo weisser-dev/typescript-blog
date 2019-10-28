@@ -8,6 +8,7 @@ export function showStaticContent(req: Request, res: Response) {
     res.render('templates/default', {page: page,
             baseUrl: baseUrl,
             params: req.query, 
+            amp: false,
             altTag: altTag,
             tags: ""});
 }
