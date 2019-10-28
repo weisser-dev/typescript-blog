@@ -103,7 +103,7 @@ createConnection().then(async connection => {
         const altTag = req.get('host');
     
         res.removeHeader('content-type');
-        res.render('templates/default', { page: page, altTag: altTag, baseUrl: baseUrl});
+        res.render('templates/default', { page: page,amp: false, altTag: altTag, baseUrl: baseUrl});
     });
 
     // error handler
@@ -122,7 +122,7 @@ createConnection().then(async connection => {
         // render the error page
         res.status(err.status || 404);
         //res.render('error');
-        res.render('templates/default', { page: page, altTag: altTag, baseUrl: baseUrl});
+        res.render('templates/default', { page: page,amp: false, altTag: altTag, baseUrl: baseUrl});
     });
 
     // run app
