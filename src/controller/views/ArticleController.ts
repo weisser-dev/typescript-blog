@@ -31,14 +31,13 @@ export async function showArticleById(req: Request, res: Response) {
     const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     const altTag = req.get('host');
     // render ejs with loaded articled
-    var page = 'static';
     var amp = false;
     if(req.path.includes("/amp/")) {
         amp = true;
         article.content = article.content.replace(new RegExp('<img', 'g'), "<amp-img width='200px' height='150px' layout='responsive'");
     }
     res.render('templates/default', {
-        page: page,
+        page: 'static',
         amp: amp,
         baseUrl: baseUrl,
         params: req.query,
@@ -46,6 +45,34 @@ export async function showArticleById(req: Request, res: Response) {
         altTag: altTag,
         filter: "",
         tags: "",
+        moment: moment
+    });
+}
+
+export async function showArticles(req: Request, res: Response) {
+
+    // get a article repository to perform operations with post
+    const articleRepository = getManager().getRepository(Article);
+    const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    const altTag = req.get('host');
+    
+    // load all articles
+    const articles = await articleRepository.createQueryBuilder("article") // first argument is an alias. Alias is what you are selecting - photos. You must specify it.
+    .where("article.visible = true")
+    .orderBy("article.time", "DESC")
+    .skip(0)
+    //.take(9)
+    .getMany();
+    
+    // return loaded articles
+    res.render('templates/default', {page: 'articles', 
+        baseUrl: baseUrl, 
+        data: articles, 
+        amp: false,
+        tags: "", 
+        filter: "",
+        easterEgg: "", 
+        altTag: altTag,
         moment: moment
     });
 }

@@ -18,6 +18,11 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
         cache: 100
     },
     {
+        path: "/articles/",
+        action: showArticles,
+        cache: 100
+    },
+    {
         path: "/articles/:id",
         action: showArticleById,
         cache: 100
