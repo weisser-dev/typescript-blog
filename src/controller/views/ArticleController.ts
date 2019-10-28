@@ -30,8 +30,7 @@ export async function showArticleById(req: Request, res: Response) {
 
     const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     const altTag = req.get('host');
-    // render ejs with loaded article
-    console.log(req);
+    // render ejs with loaded articled
     var page = 'static';
     var amp = false;
     if(req.path.includes("/amp/")) {
