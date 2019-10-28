@@ -49,20 +49,18 @@
     color:inherit
 }
 .whit-e-nav-logo .whit-e-svg-signet{
-    width:auto;
+    width:10px;
     height:20px;
 }
-
 .whit-e-nav-logo .svg-logo-light{
-    width:auto;
     height:30px;
+    width: 140px;
     margin-left: 5px;
     display: block;
 }
-
 .whit-e-nav-logo .svg-logo-dark{
-    width:auto;
     height:30px;
+    width: 140px;
     margin-left: 5px;
     display: none;
 }
