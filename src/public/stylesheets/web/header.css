@@ -3,7 +3,7 @@
     outline:none;
     border:1px solid #ccdfeb;
     color:#738a94;
-    text-decoration:none;
+    text-decoration:none!important;
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -38,8 +38,8 @@
 .whit-e-nav-logo{
     -ms-flex-negative:0;
     flex-shrink:0;
-    display:-ms-flexbox;
-    display:flex;
+    display:-ms-flexbox!important;
+    display:flex!important;
     -ms-flex-align:center;
     align-items:center;
     margin-left:-12px;
