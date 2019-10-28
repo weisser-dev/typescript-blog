@@ -6,6 +6,25 @@
         <priority>1.00</priority>
     </url>
 
+    <!-- for each amp article-->
+    <% articles.forEach(function(article){ %>
+    <url>
+        <loc><%= baseUrl %>/amp/<%= article.id %></loc>
+        <lastmod><%= moment(article.time).format( 'YYYY-MM-DDTHH:mm:ss') %>+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <% });%>
+
+    <% articles.forEach(function(article){ %>
+    <url>
+        <loc><%= baseUrl %>/amp/articles/<%= article.id %></loc>
+        <lastmod><%= moment(article.time).format( 'YYYY-MM-DDTHH:mm:ss') %>+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <% });%>
+
     <!-- for each article-->
     <% articles.forEach(function(article){ %>
     <url>
