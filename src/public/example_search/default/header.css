@@ -1,7 +1,7 @@
 .whit-e-btn{
     display:inline-block;
     outline:none;
-    border:1px solid #ccdfeb;
+    border:1px solid #ccdfeb!important;
     color:#738a94;
     text-decoration:none!important;
     -webkit-user-select:none;
