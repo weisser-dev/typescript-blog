@@ -43,3 +43,13 @@ export async function articleUpdateAction(req: Request, res: Response) {
     
     res.redirect("/admin");
 }
+
+export async function articleExportAction(req: Request, res: Response) {
+
+    res.redirect("/admin");
+}
+
+export async function articleDownloadAction(req: Request, res: Response) {
+    
+    res.redirect("/admin");
+}

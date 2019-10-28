@@ -1,5 +1,5 @@
 import {IAppRoutes} from './interfaces/IAppRoutes';
-import {articleUpdateAction} from "../controller/admin/actions/ArticleSaveAction";
+import {articleUpdateAction, articleExportAction, articleDownloadAction} from "../controller/admin/actions/ArticleActionController";
 import {showArticleById, editArticle} from "../controller/views/ArticleController";
 import {showFriends} from '../controller/views/FriendsController';
 import {showIndex} from "../controller/views/IndexController";
@@ -65,6 +65,14 @@ export const AppPostRoutes: IAppRoutes = { "routes":[
     {
         path: "/updateArticle",
         action: articleUpdateAction
+    },
+    {
+        path: "/admin/exportArticle/:id",
+        action: articleExportAction
+    },
+    {
+        path: "/admin/downloadArticle/:id",
+        action: articleDownloadAction
     },
     {
         path: "/admin/login",
