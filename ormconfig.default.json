@@ -1,4 +1,4 @@
-//rename it to ormconfig.json with your values
+//rename it to ormconfig.json with your values and remove comment ;)
 {
    "type": "mysql",
    "host": "localhost",
