@@ -12,6 +12,32 @@ import "reflect-metadata";
 import { createConnection, UpdateQueryBuilder } from 'typeorm';
 import {AppGetRoutes, AppPostRoutes} from "./routing/routes";
 
+import minify from 'express-minify';
+import uglifyEs from 'uglify-es';
+
+import mcache from 'memory-cache';
+
+var cache = (duration: number) => {
+    return (req: Request, res: Response, next: NextFunction) => {
+        var key = '__express__' + req.originalUrl || req.url;
+        var cachedBody = mcache.get(key);
+        if (cachedBody) {
+            res.send(cachedBody);
+            return;
+        } else {
+            //@ts-ignore
+            res.sendResponse = res.send
+            //@ts-ignore
+            res.send = (body) => {
+                mcache.put(key, body, duration * 1000);
+                //@ts-ignore
+                res.sendResponse(body)
+            }
+            next()
+        }
+    }
+}
+
 // create connection with database
 // note that it's not active database connection
 // TypeORM creates connection pools and uses them for your requests
@@ -31,6 +57,8 @@ createConnection().then(async connection => {
         // @todo set secure true before deploy
         cookie: { secure: false }
     }))
+    //@ts-ignore
+    app.use(minify({cache: true, uglifyJsModule: uglifyEs}));
     app.use(express.static(path.join(__dirname, 'public')));
 
     /**
@@ -51,7 +79,7 @@ createConnection().then(async connection => {
 
     // register all get application routes
     AppGetRoutes.routes.forEach(route => {
-        app.get(route.path, (request: Request, response: Response, next: Function) => {
+        app.get(route.path, cache(route.cache), (request: Request, response: Response, next: Function) => {
             route.action(request, response)
                 .then(() => next)
                 .catch((err: any) => next(err));

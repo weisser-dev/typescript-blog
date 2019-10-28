@@ -14,43 +14,53 @@ import {showAdmin} from 'src/controller/admin/AdminController';
 export const AppGetRoutes: IAppRoutes = { "routes":[
     {
         path: "/",
-        action: showIndex
+        action: showIndex,
+        cache: 1000
     },
     {
         path: "/articles/:id",
-        action: showArticleById
+        action: showArticleById,
+        cache: 1000
     },
     {
         path: "/friends",
-        action: showFriends
+        action: showFriends,
+        cache: 1000
     },
     {
         path: "/static/:id",
-        action: showStaticContent
+        action: showStaticContent,
+        cache: 10000
     }, 
     {
         path: "/admin",
-        action: showAdmin
+        action: showAdmin,
+        cache: 0
     },     
     {
         path: "/admin/login",
-        action: showAdmin
+        action: showAdmin,
+        cache: 0
     },     
     {
         path: "/admin/editArticle/:id",
-        action: editArticle
+        action: editArticle,
+        cache: 0
     },     
     {
         path: "/admin/addArticle",
-        action: editArticle
+        action: editArticle,
+        cache:0
     },  
     {
         path: "/logout",
-        action: doLogoutAction
+        action: doLogoutAction,
+        cache: 0
     },
     {
         path: "/:feed",
-        action: showFeed
+        action: showFeed,
+        cache: 1000
     }  
 ]};
 
@@ -60,22 +70,27 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
 export const AppPostRoutes: IAppRoutes = { "routes":[
     {
         path: "/",
-        action: showIndex
+        action: showIndex,
+        cache: 100
     },
     {
         path: "/updateArticle",
-        action: articleUpdateAction
+        action: articleUpdateAction,
+        cache: 0
     },
     {
         path: "/admin/exportArticle/:id",
-        action: articleExportAction
+        action: articleExportAction,
+        cache: 0
     },
     {
         path: "/admin/downloadArticle/:id",
-        action: articleDownloadAction
+        action: articleDownloadAction,
+        cache: 0
     },
     {
         path: "/admin/login",
-        action: doLoginAction
+        action: doLoginAction,
+        cache: 0
     }
 ]};
