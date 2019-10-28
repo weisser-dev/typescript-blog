@@ -15,7 +15,7 @@
                     <th class="not-mob">Tags</th>
                     <th class="not-mob">Date</th>
                     <th class="not-mob">Visible</th>
-                    <th style="width: 50px;"> </th>
+                    <th style="width: 150px;"> </th>
                 </tr>
             </thead>
             </table>
@@ -29,12 +29,12 @@
                                 <td class="not-mob"><%= data.tags %></td>
                                 <td class="not-mob"><%= data.time %></td>
                                 <td class="not-mob"><%= data.visible %></td>
-                                <td style="width: 50px;">
+                                <td style="width: 150px;">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                         <!--<button class="btn btn-danger" onClick="removeArticle(<%= data.id%>)">-</button>-->
-                                        <a href="/admin/downloadArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/download.svg"/></button></a>
-                                        <a href="/admin/editArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/edit.svg"/></button></a>
-                                        <a href="/admin/exportArticle/<%=data.id%>"><button class="btn btn-default"><img src="/images/icons/export.svg"/></button></a>
+                                        <a href="/admin/downloadArticle/<%=data.id%>"><button class="btn btn-default"><img class="icon-img" src="/images/icons/download.svg"/></button></a>
+                                        <a href="/admin/editArticle/<%=data.id%>"><button class="btn btn-default"><img class="icon-img" src="/images/icons/edit.svg"/></button></a>
+                                        <a href="/admin/exportArticle/<%=data.id%>"><button class="btn btn-default"><img class="icon-img" src="/images/icons/export.svg"/></button></a>
                                     
                                     </div>
                                 </td>
