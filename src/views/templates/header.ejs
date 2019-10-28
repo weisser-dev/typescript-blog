@@ -17,6 +17,7 @@
                     <% if(typeof filter !== 'undefined' && filter !== "home" && filter.length > 0) { %>
                         <%= filter %>
                     <% } else { %>
+                        <% if(amp) { %> <%=altTag.replace('www.','').toUpperCase()%> - Dev <% } %>
                         Blog
                     <% } %>
                 </div></a>
