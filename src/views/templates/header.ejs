@@ -26,7 +26,9 @@
             <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
         <% } %>
             <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
-                <<% if(amp) { %>amp-<% } %>img <% if(amp) { %>layout="responsive"<% } %> height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"></<% if(amp) { %>amp- <% } %>img>
+                <% if(!amp) {%>
+                    <img height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"/>
+                <% } %>
                 <span>Github</span>
             </a>
         </div>
