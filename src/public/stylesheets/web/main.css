@@ -259,6 +259,7 @@ body{
   }
  
   .reading-time {
-      float: right;
-      font-size: x-small;
+    float: right;
+    font-size: smaller;
+    font-style: italic;
   }

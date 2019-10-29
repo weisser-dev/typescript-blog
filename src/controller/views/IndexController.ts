@@ -1,6 +1,7 @@
 import {Request, Response} from "express";
 import {getManager} from "typeorm";
 import {Article} from "../../entity/Article";
+import readingTime from "reading-time";
 
 const moment = require('moment');
 
@@ -14,6 +15,7 @@ export async function showIndex(req: Request, res: Response) {
     const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     const altTag = req.get('host');
     
+    
     // load all articles
     const articles = await articleRepository.createQueryBuilder("article") // first argument is an alias. Alias is what you are selecting - photos. You must specify it.
     .where("article.visible = true")
@@ -25,7 +27,8 @@ export async function showIndex(req: Request, res: Response) {
     // return loaded articles
     res.render('templates/default', {page: '../content/index', 
         baseUrl: baseUrl, 
-        data: articles, 
+        data: articles,
+        readingTime: readingTime, 
         amp: false,
         tags: "", 
         filter: "",

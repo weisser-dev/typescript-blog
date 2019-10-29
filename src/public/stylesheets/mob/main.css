@@ -116,5 +116,6 @@
  
   .reading-time {
     float: right;
-    font-size: x-small;
+    font-size: smaller;
+    font-style: italic;
 }
