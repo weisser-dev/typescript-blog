@@ -114,8 +114,16 @@
     width: 0%;
   }
  
+  .time-section .posting-date {
+    float: left;
+  }
+  
   .reading-time {
     float: right;
     font-size: smaller;
     font-style: italic;
-}
+  }
+
+  .time-section .reading-time {
+    margin-right: -25px;
+  }
