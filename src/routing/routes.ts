@@ -1,12 +1,13 @@
 import {IAppRoutes} from './interfaces/IAppRoutes';
-import {articleUpdateAction, articleExportAction, articleDownloadAction} from "../controller/admin/actions/ArticleActionController";
+import {articleUpdateAction, articleExportAction, articleDownloadAction} from "../controller/actions/ArticleActionController";
 import {showArticleById, editArticle} from "../controller/views/ArticleController";
 import {showFriends} from '../controller/views/FriendsController';
 import {showIndex} from "../controller/views/IndexController";
 import {showStaticContent} from "../controller/views/StaticContentController";
 import {showFeed} from 'src/controller/views/FeedsController';
-import {doLoginAction, doLogoutAction} from 'src/controller/admin/actions/AuthActionController';
-import {showAdmin} from 'src/controller/admin/AdminController';
+import {doLoginAction, doLogoutAction} from 'src/controller/actions/AuthActionController';
+import {showAdmin} from 'src/controller/views/AdminController';
+import { commentCreatedAction } from 'src/controller/actions/CommentActionController';
 
 /**
  * All application routes.
@@ -91,6 +92,11 @@ export const AppPostRoutes: IAppRoutes = { "routes":[
     {
         path: "/updateArticle",
         action: articleUpdateAction,
+        cache: 1
+    },
+    {
+        path: "/article/:id/createComment",
+        action: commentCreatedAction,
         cache: 1
     },
     {

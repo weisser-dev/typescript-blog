@@ -46,6 +46,8 @@ export async function showArticleById(req: Request, res: Response) {
         baseUrl: baseUrl,
         readingTime: stats,
         params: req.query,
+        //@ts-ignore
+        captcha:res.recaptcha,
         data: article,
         altTag: altTag,
         moment: moment

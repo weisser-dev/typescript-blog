@@ -1,0 +1,5 @@
+//rename it to ormconfig.json with your values and remove comment ;)
+{
+   "siteKey":"yourSiteKey",
+   "secretKey":"yourSecretKey"
+}

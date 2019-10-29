@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import {getManager} from "typeorm";
-import {Article} from "../../../entity/Article";
+import {Article} from "../../entity/Article";
 
 const moment = require('moment');
 

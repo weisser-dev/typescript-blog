@@ -57,6 +57,11 @@ createConnection().then(async connection => {
         // @todo set secure true before deploy
         cookie: { secure: false }
     }))
+
+    var Recaptcha = require('express-recaptcha').RecaptchaV3;
+    //import Recaptcha from 'express-recaptcha'
+    var recaptcha = new Recaptcha('6LcKIcAUAAAAAA97kSmGf1DTHxptfyXYUzoh2O6D', '6LcKIcAUAAAAAL29ITgTTbqTb5ceR-2NlpAvCTMn');
+    
     //@ts-ignore
     app.use(minify({cache: true, uglifyJsModule: uglifyEs}));
     app.use(express.static(path.join(__dirname, 'public')));
@@ -79,7 +84,7 @@ createConnection().then(async connection => {
 
     // register all get application routes
     AppGetRoutes.routes.forEach(route => {
-        app.get(route.path, cache(route.cache), (request: Request, response: Response, next: Function) => {
+        app.get(route.path, cache(route.cache), recaptcha.middleware.render, (request: Request, response: Response, next: Function) => {
             route.action(request, response)
                 .then(() => next)
                 .catch((err: any) => next(err));
@@ -88,7 +93,7 @@ createConnection().then(async connection => {
 
     // register all application routes
     AppPostRoutes.routes.forEach(route => {
-        app.post(route.path, (request: Request, response: Response, next: Function) => {
+        app.post(route.path, recaptcha.middleware.verify, (request: Request, response: Response, next: Function) => {
             route.action(request, response)
                 .then(() => next)
                 .catch((err: any) => next(err));
