@@ -21,12 +21,18 @@ export async function showIndex(req: Request, res: Response) {
     .skip(0)
     //.take(9)
     .getMany();
+
+    var loggedIn;
+    if(req.session && req.session.userId) {
+        loggedIn = true;
+    }
     
     // return loaded articles
     res.render('templates/default', {page: '../content/index', 
         baseUrl: baseUrl, 
         data: articles, 
         easterEgg: "", 
+        loggedIn: loggedIn,
         altTag: altTag,
         moment: moment
     });

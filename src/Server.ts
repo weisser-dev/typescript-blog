@@ -29,7 +29,7 @@ var cache = (duration: number) => {
             res.sendResponse = res.send
             //@ts-ignore
             res.send = (body) => {
-                mcache.put(key, body, duration * 1000);
+                mcache.put(key, body, duration * 10);
                 //@ts-ignore
                 res.sendResponse(body)
             }
