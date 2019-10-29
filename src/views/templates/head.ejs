@@ -2,7 +2,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <% if(amp) { %>
+    <% if(locals.amp && amp) { %>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <% } %>
@@ -12,7 +12,7 @@
     <!-- Favicon -->
 
     <!-- Styles -->
-    <% if(!amp) { %>
+    <% if(!locals.amp || !amp) { %>
         <link rel='stylesheet' href='/stylesheets/web/header.css' />
         <link rel='stylesheet' href='/stylesheets/mob/header.css' />
         <link rel='stylesheet' href='/stylesheets/elements.css' />
@@ -35,7 +35,7 @@
              <%- include ../../public/stylesheets/theme/dark_wo_important.css %>
         </style>
     <% } %>
-    <% if(!amp) { %>
+    <% if(!locals.amp || !amp) { %>
         <script src="/js/jquery-3.3.1.min.js"></script>        
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114049217-1"></script>

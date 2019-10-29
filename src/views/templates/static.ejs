@@ -1,4 +1,4 @@
-<% if(!amp) { %>
+<% if(!locals.amp || !amp) { %>
 	<script src="/js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 <% } %>
@@ -20,6 +20,6 @@
         </section>
     </div>
 </main>
-<% if(!amp) { %>
+<% if(!locals.amp || !amp) { %>
 	<%- include comments.ejs %>
 <% } %>

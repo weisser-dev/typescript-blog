@@ -30,7 +30,6 @@ export async function showFeed(req: Request, res: Response) {
     return res.render('feeds/' + feedTemplate, {
         baseUrl: baseUrl,
         articles: articles,
-        amp: false,
         altTag: altTag,
         moment: moment
     })

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html    <% if(amp) { %> amp <% } %>lang="en">
+<html    <% if(locals.amp && amp) { %> amp <% } %>lang="en">
     <%- include head.ejs %>
     <body>
         <div class="site-wrapper">
@@ -12,7 +12,7 @@
             <!-- /Content -->
 
             <!-- Toggle for Darkmode and Lightmode-->
-            <% if(!amp) { %>
+            <% if(!locals.amp || !amp) { %>
                 <%- include theme.ejs %>
             <% } %>
             <!-- /toggle -->

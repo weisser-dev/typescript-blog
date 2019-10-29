@@ -26,9 +26,6 @@ export async function showIndex(req: Request, res: Response) {
     res.render('templates/default', {page: '../content/index', 
         baseUrl: baseUrl, 
         data: articles, 
-        amp: false,
-        tags: "", 
-        filter: "",
         easterEgg: "", 
         altTag: altTag,
         moment: moment

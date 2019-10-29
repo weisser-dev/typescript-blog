@@ -2,7 +2,7 @@
     <nav class="whit-e-navbar inner">
         <div class="whit-e-navbar-left">
             <a class="whit-e-nav-logo whit-e-navbar-item" href="/">
-                <% if(!amp) { %>
+                <% if(!locals.amp || !amp) { %>
                     <img class="whit-e-svg-signet" src="/images/signet_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></img>
                     <img class="svg-logo-light" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_positive.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></img>
                     <img class="svg-logo-dark" src="/images/<%=altTag.replace('www.','').toLowerCase()%>_logo_negative.svg" alt="<%= altTag.replace('www.','').toUpperCase() %>"></img>
@@ -12,33 +12,18 @@
                     <% if(typeof filter !== 'undefined' && filter !== "home" && filter.length > 0) { %>
                         <%= filter %>
                     <% } else { %>
-                        <% if(amp) { %> <%=altTag.replace('www.','').toUpperCase()%> - Dev <% } %>
+                        <% if(locals.amp && amp) { %> <%=altTag.replace('www.','').toUpperCase()%> - Dev <% } %>
                         Blog
                     <% } %>
                 </div></a>
         </div>
         <div class="whit-e-navbar-right">
-        <% if(typeof filter !== 'undefined' && filter === "home") { %>
-           <a class="whit-e-navbar-item active" href="/">Home</a>
-           <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
-        <% } else if(typeof filter !== 'undefined' && filter === "about") { %>
-            <a class="whit-e-navbar-item" href="/">Home</a>
-            <a class="whit-e-navbar-item active" href="https://weisser.dev">About</a>
-        <% } else { %>
-            <a class="whit-e-navbar-item" href="/">Home</a>
-            <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
-        <% } %>
-            <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
-                <% if(!amp) {%>
-                    <img height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"/>
-                <% } %>
-                <span>Github</span>
-            </a>
+                <%- include ../content/navi.ejs %>
         </div>
     </nav>
 </header>
 <header class="whit-e-mobilehead">
-    <% if(!amp) { %>
+    <% if(!locals.amp || !amp) { %>
     <nav class="whit-e-mobilenavbar">
         <a class="whit-e-nav-burger" href="#">
             <div class="hamburger">
@@ -52,25 +37,12 @@
         </a>
     </nav>
     <div class="whit-e-mobilemenu">
-        <% if(typeof filter !== 'undefined' && filter === "home") { %>
-           <a class="whit-e-navbar-item active" href="/">Home</a>
-           <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
-        <% } else if(typeof filter !== 'undefined' && filter === "about"){ %>
-            <a class="whit-e-navbar-item" href="/">Home</a>
-            <a class="whit-e-navbar-item active" href="https://weisser.dev">About</a>
-        <% } else { %>
-                <a class="whit-e-navbar-item" href="/">Home</a>
-                <a class="whit-e-navbar-item" href="https://weisser.dev">About</a>
-        <% } %>
-        <a class="whit-e-navbar-btn whit-e-btn" href="https://github.com/whit-e">
-            <img height="15px" width="15px" src="/images/GitHub-Mark-32px.png" alt="GitHub.com Logo"/>
-            <span>Github</span>
-        </a>
+            <%- include ../content/navi.ejs %>
     </div>
     <% } else { %>
         <nav class="whit-e-mobilenavbar">
                 <a class="whit-e-nav-logo-mob" style="color:white;margin-top:-5px;font-size:xx-large;" href="/">
-                    <% if(amp) { %> <%=altTag.replace('www.','').toUpperCase()%> - Dev <% } %>Blog
+                    <% if(locals.amp && amp) { %> <%=altTag.replace('www.','').toUpperCase()%> - Dev <% } %>Blog
                 </a>
             </nav>
     <% } %>

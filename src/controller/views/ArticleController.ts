@@ -43,8 +43,6 @@ export async function showArticleById(req: Request, res: Response) {
         params: req.query,
         data: article,
         altTag: altTag,
-        filter: "",
-        tags: "",
         moment: moment
     });
 }
@@ -68,10 +66,6 @@ export async function showArticles(req: Request, res: Response) {
     res.render('templates/default', {page: 'articles', 
         baseUrl: baseUrl, 
         data: articles, 
-        amp: false,
-        tags: "", 
-        filter: "",
-        easterEgg: "", 
         altTag: altTag,
         moment: moment
     });
@@ -96,18 +90,13 @@ export async function editArticle(req: Request, res: Response) {
             page: "../admin/add",
             baseUrl: baseUrl,
             params: req.query,
-            amp: false,
             article: article,
             altTag: altTag,
-            filter: "",
-            tags: "",
             moment: moment
         });
     }else {
         res.render('templates/default', {page: '../admin/login', 
         baseUrl: baseUrl, 
-        amp: false,
-        altTag: altTag,
-        tags: ""}); 
+        altTag: altTag}); 
       }
 }
