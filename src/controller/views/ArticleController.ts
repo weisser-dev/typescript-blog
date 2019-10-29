@@ -1,7 +1,7 @@
+import readingTime from "reading-time";
 import {Request, Response} from "express";
 import {getManager} from "typeorm";
 import {Article} from "../../entity/Article";
-import {readingTime} from "reading-time";
  
 
 //legacy shit
