@@ -33,7 +33,7 @@
                                 </section>
                                 <div class="time-section">
                                     <time class="posting-date" datetime="<%= moment(data.time).format( 'DD-MMM-YYYY') %>"><%= moment(data.time).format( 'DD-MMM-YYYY') %></time>
-                                    <time class="reading-time"><%= var stats = readingTime(data.content); stats.text %></time>
+                                    <time class="reading-time"><%= article.readingTime %></time>
                                 </div>
                             </a>
                         </div>

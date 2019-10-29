@@ -23,12 +23,17 @@ export async function showIndex(req: Request, res: Response) {
     .skip(0)
     //.take(9)
     .getMany();
+
+    articles.forEach(article => {
+        const stats = readingTime(article.content);
+        //@ts-ignore
+        article.readingTime = stats.text;
+    });
     
     // return loaded articles
     res.render('templates/default', {page: '../content/index', 
         baseUrl: baseUrl, 
         data: articles,
-        readingTime: readingTime, 
         amp: false,
         tags: "", 
         filter: "",
