@@ -1,6 +1,6 @@
 import {IAppRoutes} from './interfaces/IAppRoutes';
 import {articleUpdateAction, articleExportAction, articleDownloadAction} from "../controller/admin/actions/ArticleActionController";
-import {showArticleById, editArticle, showArticles} from "../controller/views/ArticleController";
+import {showArticleById, editArticle} from "../controller/views/ArticleController";
 import {showFriends} from '../controller/views/FriendsController';
 import {showIndex} from "../controller/views/IndexController";
 import {showStaticContent} from "../controller/views/StaticContentController";
@@ -18,10 +18,6 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
         cache: 1
     },
     {
-        path: "/archive",
-        action: showArticles,
-        cache: 1
-    },{
         path: "/articles",
         action: showIndex,
         cache: 1

@@ -52,30 +52,6 @@ export async function showArticleById(req: Request, res: Response) {
     });
 }
 
-export async function showArticles(req: Request, res: Response) {
-
-    // get a article repository to perform operations with post
-    const articleRepository = getManager().getRepository(Article);
-    const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-    const altTag = req.get('host');
-    
-    // load all articles
-    const articles = await articleRepository.createQueryBuilder("article") // first argument is an alias. Alias is what you are selecting - photos. You must specify it.
-    .where("article.visible = true")
-    .orderBy("article.time", "DESC")
-    .skip(0)
-    //.take(9)
-    .getMany();
-    
-    // return loaded articles
-    res.render('templates/default', {page: '../content/archive', 
-        baseUrl: baseUrl, 
-        data: articles, 
-        altTag: altTag,
-        moment: moment
-    });
-}
-
 export async function editArticle(req: Request, res: Response) {
 
     const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
