@@ -114,3 +114,7 @@
     width: 0%;
   }
  
+  .reading-time {
+    float: right;
+    font-size: x-small;
+}

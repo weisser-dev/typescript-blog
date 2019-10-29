@@ -1,6 +1,8 @@
 import {Request, Response} from "express";
 import {getManager} from "typeorm";
 import {Article} from "../../entity/Article";
+import {readingTime} from "reading-time";
+ 
 
 //legacy shit
 const markdown = require('markdown-it');
@@ -18,6 +20,7 @@ export async function showArticleById(req: Request, res: Response) {
     // load a article by a given article id
     const article= await articleRepository.findOne(req.params.id);
 
+    
     // if article was not found return 404 to the client
     if (!article) {
         res.status(404);
@@ -25,6 +28,7 @@ export async function showArticleById(req: Request, res: Response) {
         return;
     }
 
+    const stats = readingTime(article.content);
     const md = new markdown();
     article.content = md.render(article.content);
 
@@ -40,6 +44,7 @@ export async function showArticleById(req: Request, res: Response) {
         page: 'static',
         amp: amp,
         baseUrl: baseUrl,
+        readingTime: stats,
         params: req.query,
         data: article,
         altTag: altTag,

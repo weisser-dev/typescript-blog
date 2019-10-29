@@ -19,7 +19,10 @@
 
 <main id="site-main" class="site-main outer">
     <div class="inner static">
+        
         <time class="posting-date" datetime="<%= moment(data.time).format( 'DD-MMM-YYYY') %>"><%= moment(data.time).format( 'DD-MMM-YYYY') %></time>
+        <time class="reading-time" ><%= readingTime.text %></time>
+        
         <title><%- data.title%></title>
         <h1 class="posting-title"><%- data.title%></h1>
         <section class="markdown-body">
