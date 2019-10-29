@@ -1,5 +1,5 @@
 <% if(!locals.amp || !amp) { %>
-	<script src="/js/highlight.pack.js"></script>
+    <script src="/js/progressbar.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 <% } %>
 
@@ -10,9 +10,20 @@
 <meta property="og:url" content="https://<%= altTag.replace('www.','').toUpperCase() %>/<%= data.id%>">
 <meta name="description" content="<%= data.description%>">
 
+<% if(!amp) { %>
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+<% } %>
+
 <main id="site-main" class="site-main outer">
     <div class="inner static">
-        <time class="posting-date" datetime="<%= moment(data.time).format( 'DD-MMM-YYYY') %>"><%= moment(data.time).format( 'DD-MMM-YYYY') %></time>
+        
+        <time class="posting-date" style="color:gray;" datetime="<%= moment(data.time).format( 'DD-MMM-YYYY') %>"><%= moment(data.time).format( 'DD-MMM-YYYY') %></time>
+        <time class="reading-time" style="color:gray;" ><%= readingTime.text %></time>
+        
         <title><%- data.title%></title>
         <h1 class="posting-title"><%- data.title%></h1>
         <section class="markdown-body">

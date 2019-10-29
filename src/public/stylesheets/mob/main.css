@@ -94,3 +94,36 @@
     height: 27px;
     display: none;
 }
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .progress-container {
+    background-color: rgba(150, 150, 150, 0.6);
+    height: 10px;
+    width: 100%;
+  }
+  
+  .progress-bar {
+    background-color: #2196f3;
+    height: 10px;
+    width: 0%;
+  }
+ 
+  .time-section .posting-date {
+    float: left;
+  }
+  
+  .reading-time {
+    float: right;
+    font-size: smaller;
+    font-style: italic;
+  }
+
+  .time-section .reading-time {
+    margin-right: -25px;
+  }
