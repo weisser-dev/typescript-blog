@@ -41,7 +41,7 @@ export async function showArticleById(req: Request, res: Response) {
         article.content = article.content.replace(new RegExp('<img', 'g'), "<amp-img width='200px' height='150px' layout='responsive'");
     }
     res.render('templates/default', {
-        page: 'static',
+        page: '../content/article',
         amp: amp,
         baseUrl: baseUrl,
         readingTime: stats,
@@ -68,7 +68,7 @@ export async function showArticles(req: Request, res: Response) {
     .getMany();
     
     // return loaded articles
-    res.render('templates/default', {page: 'articles', 
+    res.render('templates/default', {page: '../content/archive', 
         baseUrl: baseUrl, 
         data: articles, 
         altTag: altTag,

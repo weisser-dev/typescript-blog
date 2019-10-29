@@ -13,7 +13,8 @@
 
             <!-- Toggle for Darkmode and Lightmode-->
             <% if(!locals.amp || !amp) { %>
-                <%- include theme.ejs %>
+                <div class="theme-toggle" onclick="changeTheme()">🌓</div>
+                <script type="text/javascript" src="/js/theme.js"></script>
             <% } %>
             <!-- /toggle -->
             
