@@ -55,6 +55,25 @@
     <meta name="robots" content="index, follow">
     <meta charset="utf-8">
 
+    <% if(locals.data && data.title) { %>
+        <meta property="og:title" content="<%- data.title%>">
+        <meta property="og:description" content="<%= data.description%>">
+        <meta property="og:url" content="https://<%= altTag.replace('www.','').toUpperCase() %>/<%= data.id%>">
+        <meta name="description" content="<%= data.description%>">
+        <meta property="og:site_name" content="https://<%= altTag.replace('www.','').toLowerCase() %>/<%= data.id%>">
+
+    <% } else { %> 
+        <meta property="og:title" content="<%= altTag.replace('www.','').toUpperCase() %> - Dev Blog">
+        <meta property="og:description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
+        <meta property="og:url" content="https://<%= altTag.replace('www.','').toUpperCase() %>">
+        <meta name="description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
+        <meta property="og:site_name" content="https://<%= altTag.replace('www.','').toLowerCase() %>">
+
+
+    
+    <% } %>
+
+    <link href="/rss.xml" title="RSS" type="application/rss+xml" rel="alternate">
     <link rel="canonical" href="<%= baseUrl %>">
 
     <meta property="og:image" content="https://<%= altTag.replace('www.','').toLowerCase() %>/images/meta/<%= altTag.replace('www.','').toLowerCase() %>.JPG">

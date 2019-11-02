@@ -15,67 +15,67 @@ export const AppGetRoutes: IAppRoutes = { "routes":[
     {
         path: "/",
         action: showIndex,
-        cache: 1
+        cache: 0
     },
     {
         path: "/articles",
         action: showIndex,
-        cache: 1
+        cache: 0
     },
     {
         path: "/articles/:id",
         action: showArticleById,
-        cache: 100
+        cache: 0
     },
     {
         path: "/amp/:id",
         action: showArticleById,
-        cache: 1000
+        cache: 0
     },
     {
         path: "/amp/articles/:id",
         action: showArticleById,
-        cache: 1000
+        cache: 0
     },
     {
         path: "/friends",
         action: showFriends,
-        cache: 1000
+        cache: 0
     },
     {
         path: "/static/:id",
         action: showStaticContent,
-        cache: 1000
+        cache: 0
     }, 
     {
         path: "/admin",
         action: showAdmin,
-        cache: 1
+        cache: 0
     },     
     {
         path: "/admin/login",
         action: showAdmin,
-        cache: 1
+        cache: 0
     },     
     {
         path: "/admin/editArticle/:id",
         action: editArticle,
-        cache: 1
+        cache: 0
     },     
     {
         path: "/admin/addArticle",
         action: editArticle,
-        cache:1
+        cache:0
     },  
     {
         path: "/logout",
         action: doLogoutAction,
-        cache: 1
+        cache: 0
     },
     {
         path: "/:feed",
         action: showFeed,
-        cache: 1000
+        cache: 0
     }  
 ]};
 
@@ -86,26 +86,26 @@ export const AppPostRoutes: IAppRoutes = { "routes":[
     {
         path: "/",
         action: showIndex,
-        cache: 100
+        cache: 0
     },
     {
         path: "/updateArticle",
         action: articleUpdateAction,
-        cache: 1
+        cache: 0
     },
     {
         path: "/admin/exportArticle/:id",
         action: articleExportAction,
-        cache: 1
+        cache: 0
     },
     {
         path: "/admin/downloadArticle/:id",
         action: articleDownloadAction,
-        cache: 1
+        cache: 0
     },
     {
         path: "/admin/login",
         action: doLoginAction,
-        cache: 1
+        cache: 0
     }
 ]};

@@ -15,8 +15,8 @@ import {AppGetRoutes, AppPostRoutes} from "./routing/routes";
 import minify from 'express-minify';
 import uglifyEs from 'uglify-es';
 
-import mcache from 'memory-cache';
-
+//disable cache, cause i dont need it
+/*import mcache from 'memory-cache';
 var cache = (duration: number) => {
     return (req: Request, res: Response, next: NextFunction) => {
         var key = '__express__' + req.originalUrl || req.url;
@@ -37,6 +37,7 @@ var cache = (duration: number) => {
         }
     }
 }
+*/
 
 // create connection with database
 // note that it's not active database connection
@@ -79,7 +80,9 @@ createConnection().then(async connection => {
 
     // register all get application routes
     AppGetRoutes.routes.forEach(route => {
-        app.get(route.path, cache(route.cache), (request: Request, response: Response, next: Function) => {
+        
+        //if cache is enabled -> app.get(route.path, cache(route.cache), (request: Request, response: Response, next: Function) => {
+        app.get(route.path, (request: Request, response: Response, next: Function) => {
             route.action(request, response)
                 .then(() => next)
                 .catch((err: any) => next(err));
