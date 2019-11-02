@@ -10,10 +10,6 @@
     <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16" />
     <!-- Favicon -->
-
-    <% if(!locals.amp || !amp) { %>
-        <script type="text/javascript" src="/js/mobilehead.js"></script>
-    <% } %>
     
     <!-- Styles -->
     <% if(!locals.amp || !amp) { %>
@@ -22,6 +18,7 @@
         <link rel='stylesheet' href='/stylesheets/elements.css' />
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <link rel="preconnect" href="https://www.google-analytics.com">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114049217-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
