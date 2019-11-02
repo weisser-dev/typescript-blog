@@ -18,3 +18,40 @@
 <% if(!locals.amp || !amp) { %>
 	<script type="text/javascript" src="/js/mobilehead.js"></script>
 <% } %>
+
+<!-- Styles -->
+<% if(!locals.amp || !amp) { %>
+	<link rel='stylesheet' href='/stylesheets/web/header.css' />
+	<link rel='stylesheet' href='/stylesheets/mob/header.css' />
+	<link rel='stylesheet' href='/stylesheets/elements.css' />
+	<link rel='stylesheet' href='/stylesheets/web/main.css' />
+	<link rel='stylesheet' href='/stylesheets/mob/main.css' />
+	<link rel='stylesheet' href='/stylesheets/web/footer.css' />
+	<link rel='stylesheet' href='/stylesheets/github_markdown.css' />
+	<!-- for dark theme-->
+	<link id="darkTheme" rel='stylesheet' href='/stylesheets/theme/dark.css' />
+
+<% } else { %>
+	<style amp-custom> 
+		 <%- include ../../public/stylesheets/web/header_wo_important.css %>
+		 <%- include ../../public/stylesheets/mob/header.css %>
+		 <%- include ../../public/stylesheets/elements.css %>
+		 <%- include ../../public/stylesheets/web/main.css %>
+		 <%- include ../../public/stylesheets/mob/main.css %>
+		 <%- include ../../public/stylesheets/web/footer.css %>
+		 <%- include ../../public/stylesheets/github_markdown_wo_important.css %>
+		 <%- include ../../public/stylesheets/theme/dark_wo_important.css %>
+	</style>
+<% } %>
+<% if(!locals.amp || !amp) { %>
+	<script src="/js/jquery-3.3.1.min.js"></script>        
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114049217-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-114049217-1');
+	</script>
+<% } %>
