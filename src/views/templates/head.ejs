@@ -11,6 +11,31 @@
     <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16" />
     <!-- Favicon -->
 
+    <% if(!locals.amp || !amp) { %>
+        <script type="text/javascript" src="/js/mobilehead.js"></script>
+    <% } %>
+    
+    <!-- Styles -->
+    <% if(!locals.amp || !amp) { %>
+        <link rel='stylesheet' href='/stylesheets/web/header.css' />
+        <link rel='stylesheet' href='/stylesheets/web/main.css' />
+        <link id="darkTheme" rel='stylesheet' href='/stylesheets/theme/dark.css' />
+    
+    <% } %>
+    <% if(!locals.amp || !amp) { %>
+        <script src="/js/jquery-3.3.1.min.js"></script>        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114049217-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-114049217-1');
+        </script>
+    <% } %>
+
+
     <meta name="author" content="Erik Weisser">
 	<meta name="publisher" content="Erik Weisser">
 	<meta name="copyright" content="Erik Weisser">
@@ -18,13 +43,14 @@
     <meta name="robots" content="index, follow">
     <meta charset="utf-8">
 
+
+    
     <% if(locals.data && data.title) { %>
         <meta property="og:title" content="<%- data.title%>">
         <meta property="og:description" content="<%= data.description%>">
         <meta property="og:url" content="https://<%= altTag.replace('www.','').toUpperCase() %>/<%= data.id%>">
         <meta name="description" content="<%= data.description%>">
         <meta property="og:site_name" content="https://<%= altTag.replace('www.','').toLowerCase() %>/<%= data.id%>">
-
     <% } else { %> 
         <meta property="og:title" content="<%= altTag.replace('www.','').toUpperCase() %> - Dev Blog">
         <meta property="og:description" content="Are you interested in 'how to build a MicroService' or would you know how to deploy containers to the cloud with Jenkins? Find out all this and more on my dev blog!">
