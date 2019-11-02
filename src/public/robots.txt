@@ -6,4 +6,6 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://whit-e.com/sitemap.xml
+Sitemap: https://whit-e.tech/sitemap.xml
+Sitemap: https://weisser.dev/sitemap.xml
