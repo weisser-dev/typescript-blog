@@ -3,7 +3,7 @@ body{
 }
 .time-section {
     text-align: right; 
-    color: gray;
+    color: lightgray;
     font-size: small;
     padding-right: 25px; 
 }
