@@ -19,7 +19,17 @@
     <% if(!locals.amp || !amp) { %>
         <link rel='stylesheet' href='/stylesheets/web/main.css' />
         <link rel='stylesheet' href='/stylesheets/web/header.css' />
-	    <link rel='stylesheet' href='/stylesheets/elements.css' />
+        <link rel='stylesheet' href='/stylesheets/elements.css' />
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114049217-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-114049217-1');
+        </script>
     <% } %>
     
     <meta name="author" content="Erik Weisser">
@@ -48,5 +58,5 @@
     <link href="/rss.xml" title="RSS" type="application/rss+xml" rel="alternate">
     <link rel="canonical" href="<%= baseUrl %>">
 
-    <meta property="og:image" content="https://<%= altTag.replace('www.','').toLowerCase() %>/images/meta/<%= altTag.replace('www.','').toLowerCase() %>.JPG">
+    <meta property="og:image" content="https://<%= altTag.replace('www.','').toLowerCase() %>/images/meta/<%= altTag.replace('www.','').toLowerCase() %>.jp2">
 </head>
