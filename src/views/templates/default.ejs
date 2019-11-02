@@ -11,16 +11,17 @@
             <%- include(page) %>
             <!-- /Content -->
 
-            <!-- Toggle for Darkmode and Lightmode-->
-            <% if(!locals.amp || !amp) { %>
-                <div class="theme-toggle" onclick="changeTheme()">🌓</div>
-                <script type="text/javascript" src="/js/theme.js"></script>
-            <% } %>
-            <!-- /toggle -->
             
             <!-- Footer -->
             <%- include footer.ejs %>
             <!-- /Footer -->
+            <!-- Toggle for Darkmode and Lightmode-->
+            <% if(!locals.amp || !amp) { %>
+                <div class="theme-toggle" onclick="changeTheme()">🌓</div>
+                <script type="text/javascript" src="/js/theme.js"></script>
+                <link id="darkTheme" rel='stylesheet' href='/stylesheets/theme/dark.css' />
+            <% } %>
+            
         </div>
 
     </body>
