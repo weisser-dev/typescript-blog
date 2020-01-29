@@ -16,17 +16,7 @@
         <link rel='stylesheet' href='/stylesheets/web/main.css' />
         <link rel='stylesheet' href='/stylesheets/web/header.css' />
         <link rel='stylesheet' href='/stylesheets/elements.css' />
-        
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <link rel="preconnect" href="https://www.google-analytics.com">
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114049217-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'UA-114049217-1');
-        </script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     <% }  else { %>
         <style amp-custom> 
              <%- include ../../public/stylesheets/web/header_wo_important.css %>
