@@ -1,13 +1,12 @@
-# Example how to use Express and TypeORM with TypeScript
+# typescript-blog
 
-1. clone repository 
-2. run `npm i`
-3. edit `ormconfig.json` and change your database configuration (you can also change a database type, but don't forget to install specific database drivers)
-4. run `npm start`
-5. open `http://localhost:3000/posts` and you'll empty array
-6. use curl, postman or other tools to send http requests to test your typeorm-based API
+Experimenteller Blog-Prototyp (2021) auf Basis des TypeORM-Express-Beispiels (Express + TypeORM + TypeScript, Endpunkt `/posts`).
 
-## How to use CLI?
+**Status: archiviert, nicht mehr gepflegt.**
 
-1. install `typeorm` globally: `npm i -g typeorm`
-2. run `typeorm -h` to show list of available commands
+## Start
+1. `npm i`
+2. `ormconfig.default.json` nach `ormconfig.json` kopieren und Datenbank konfigurieren
+3. `npm start`, danach `http://localhost:3000/posts`
+
+Hintergrund (aus dem urspruenglichen Beispiel): TypeORM-CLI per `npm i -g typeorm`, Hilfe mit `typeorm -h`.
